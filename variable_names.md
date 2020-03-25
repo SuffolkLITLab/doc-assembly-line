@@ -86,6 +86,7 @@ with some changes because we are using PDFs and not Word Documents.
 ## Contact information
 
 * user_address_street
+* user_address_street2
 * user_address_city
 * user_address_state
 * user_address_zip
@@ -96,6 +97,7 @@ with some changes because we are using PDFs and not Word Documents.
 * user_phone
 
 * user2_address_street
+* user2_address_street2
 * user2_address_city
 * user2_address_state
 * user2_address_zip
@@ -106,6 +108,7 @@ with some changes because we are using PDFs and not Word Documents.
 * user2_phone
 
 * other_party_address_street
+* other_party_address_street2
 * other_party_address_city
 * other_party_address_state
 * other_party_address_zip
@@ -124,10 +127,10 @@ with some changes because we are using PDFs and not Word Documents.
 * docket_number
 
 **Note**: just ignore/delete any drop-down menus for court name in existing court forms. We'll replace with the name of the
-court, written out as a new field. You can likely cover up the field.
+court, written out as a new field. You can likely cover up the field by setting a white background.
 
 Below variables will be filled in to have the full name(s) of the various people who fill that role. 
-E.g., you might have user/user2 both in the Plaintiff field. It would display as a list with a comma in between each name.
+E.g., you might have user/user2 both in the Plaintiff field. It would display as a list with a comma or and in between each name.
 E.g., Joe Smith and Jane Smith.
 
 * plaintiff (we'll have a question that says which of the people we ask about is the Plaintiff/Defendant)
