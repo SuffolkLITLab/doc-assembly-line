@@ -42,6 +42,7 @@ with some changes because we are using PDFs and not Word Documents.
 * user_name_last
 * user_name_suffix
 * user_name_full (will combine answers for first, middle, last, suffix)
+* user_gender (text field)
 * user_gender_male (checkbox)
 * user_gender_female (checkbox)
 * user_gender_other (checkbox)
@@ -52,6 +53,7 @@ with some changes because we are using PDFs and not Word Documents.
 * user2_name_last
 * user2_name_suffix
 * user2_name_full (will combine answers for first, middle, last, suffix)
+* user2_gender (text field)
 * user2_gender_male (checkbox)
 * user2_gender_female (checkbox)
 * user2_gender_other (checkbox)
@@ -74,6 +76,9 @@ with some changes because we are using PDFs and not Word Documents.
 * child1_name_full (variation that combines all 4 part)
 * child1_birthdate
 * child1_gender
+* child1_gender_male (checkbox)
+* child1_gender_female (checkbox)
+* child1_gender_other (checkbox)
 
 **Note** You can keep adding additional numbers to the child field name--including name, gender, address, etc. E.g., child2_name_full, child3_birthdate, etc., up to 10.
 
@@ -118,10 +123,12 @@ with some changes because we are using PDFs and not Word Documents.
 * court_county (note: in many forms, this says 'ss' where the county should go)
 * docket_number
 
-**Note**: just ignore/delete any drop-down menus in existing court forms. You can cover with a new, white field if necessary.
+**Note**: just ignore/delete any drop-down menus for court name in existing court forms. We'll replace with the name of the
+court, written out as a new field. You can likely cover up the field.
 
 Below variables will be filled in to have the full name(s) of the various people who fill that role. 
-E.g., you might have user/user2 both in the Plaintiff field. It would display as a list with a comma in between
+E.g., you might have user/user2 both in the Plaintiff field. It would display as a list with a comma in between each name.
+E.g., Joe Smith and Jane Smith.
 
 * plaintiff (we'll have a question that says which of the people we ask about is the Plaintiff/Defendant)
 * defendant 
