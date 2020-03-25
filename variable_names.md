@@ -31,6 +31,7 @@ Some rules for naming fields:
 * Separate multiple words in a field name with an underscore.
 * Use verb-noun pairs for checkboxes. E.g., is_parent, speaks_spanish, has_assets
 * For checkboxes with a yes and no pair, add `_no` and `_yes` to the end. E.g., is_parent_yes and is_parent_no
+* For date variables other than birthdate, end the question with `_date`. E.g., filedanswer_date
 
 This makes use of work at https://github.com/knod/docassemble-standards/wiki/Standardized-Definitions-For-Variable-Names, 
 with some changes because we are using PDFs and not Word Documents.
@@ -160,3 +161,5 @@ This may help: https://answers.acrobatusers.com/Create-a-digital-signature-field
 * user_signature
 * user2_signature
 * witness_signature
+
+* signature_date
