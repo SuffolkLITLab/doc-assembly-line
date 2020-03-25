@@ -37,6 +37,9 @@ with some changes because we are using PDFs and not Word Documents.
 
 ## Information about people
 
+If user, user2, or other_party is an organization,
+Use the first_name field to store their full name.
+
 * user_name_first
 * user_name_middle
 * user_name_last
@@ -47,6 +50,8 @@ with some changes because we are using PDFs and not Word Documents.
 * user_gender_female (checkbox)
 * user_gender_other (checkbox)
 * user_birthdate
+* user_age
+
 
 * user2_name_first
 * user2_name_middle
@@ -58,8 +63,11 @@ with some changes because we are using PDFs and not Word Documents.
 * user2_gender_female (checkbox)
 * user2_gender_other (checkbox)
 * user2_birthdate
+* user2_age
+
 
 **Note** You can keep adding additional numbers to the user field name to get the same variables--including name, gender, address, etc., up to 10.
+
 
 * other_party_name_first
 * other_party_name_middle
@@ -67,7 +75,9 @@ with some changes because we are using PDFs and not Word Documents.
 * other_party_name_suffix
 * other_party_name_full (will combine answers for first, middle, last, suffix)
 
+
 * witness_name_full
+
 
 * child1_name_first
 * child1_name_middle
@@ -79,6 +89,7 @@ with some changes because we are using PDFs and not Word Documents.
 * child1_gender_male (checkbox)
 * child1_gender_female (checkbox)
 * child1_gender_other (checkbox)
+
 
 **Note** You can keep adding additional numbers to the child field name--including name, gender, address, etc. E.g., child2_name_full, child3_birthdate, etc., up to 10.
 
@@ -96,6 +107,7 @@ with some changes because we are using PDFs and not Word Documents.
 * user_email
 * user_phone
 
+
 * user2_address_street
 * user2_address_street2
 * user2_address_city
@@ -107,6 +119,7 @@ with some changes because we are using PDFs and not Word Documents.
 * user2_email
 * user2_phone
 
+
 * other_party_address_street
 * other_party_address_street2
 * other_party_address_city
@@ -117,6 +130,7 @@ with some changes because we are using PDFs and not Word Documents.
 * other_party_address_block (variation with full address parts, on 3 lines)
 * other_party_email
 * other_party_phone
+
 
 ## Court information
 
