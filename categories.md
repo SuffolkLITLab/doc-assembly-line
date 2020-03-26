@@ -1,14 +1,13 @@
 # Allowed court types
 
+* Boston Municipal Court
 * District Court
 * Superior Court
 * Probate and Family Court
 * Housing Court
 * Land Court
-* Appeals Court
 * Juvenile Court
-* Land Court
-
+* Appeals Court
 
 # Allowed categories of forms
 
