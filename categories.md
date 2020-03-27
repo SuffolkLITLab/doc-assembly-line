@@ -13,12 +13,14 @@
 
 * Housing
 * Family Law
-* Domestic Violence
-* Consumer and Debt
-* Criminal Law
-* Employment / Unemployment
+* Domestic Violence / Safety of self
 * Health and Mental Health
+* Safety of others
+* Guardianship
+* Consumer and Debt
+* Employment / Unemployment
 * Immigration
 * Income and benefits
 * Education
 * Other -- write in another if these categories don't match
+* Criminal Law (civil issues in a criminal context - prisoner's rights)
