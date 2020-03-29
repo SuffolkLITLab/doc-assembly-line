@@ -32,11 +32,21 @@ Some rules for naming fields:
 * Use verb-noun pairs for checkboxes. E.g., is_parent, speaks_spanish, has_assets
 * For checkboxes with a yes and no pair, add `_no` and `_yes` to the end. E.g., is_parent_yes and is_parent_no
 * For date variables other than birthdate, end the question with `_date`. E.g., filedanswer_date
+* Keep the length of variable names under 79 characters (unlikely you'll reach this limit, but just to be specific)
 
 This makes use of work at https://github.com/knod/docassemble-standards/wiki/Standardized-Definitions-For-Variable-Names, 
 with some changes because we are using PDFs and not Word Documents.
 
 ## Information about people
+
+We have 4 main groups of people:
+
+* the user, and possibly a second/third user, user2, user3, etc., representing co-parties
+* children
+* the opposing party
+* a witness
+
+You can use user2 for the spouse, etc.
 
 If user, user2, or other_party is an organization,
 Use the first_name field to store their full name.
