@@ -51,7 +51,7 @@ We have two public Slack Channels:
 We have regular meetings via Zoom. You can find recordings of these below:
 
 - March 30, 2020 @ 12:30pm Eastern. [All-hands Kickoff Meeting](https://youtu.be/_7MxwiImPQM)
-- March 31, 2020 @ 12:30pm Eastern. Daily stand up/drop-in (coming soon)
+- March 31, 2020 @ 12:30pm Eastern. [Daily stand up/drop-in](https://youtu.be/LHzUXYrIBMI) + [Introduction to Docassmble](https://youtu.be/ePcDms2-Crk)
 - April 1, 2020 @ 12:30pm Eastern. Daily stand up/drop-in  (coming soon)
 - April 2, 2020 @ 12:30pm Eastern. Daily stand up/drop-in  (coming soon)
 - April 3, 2020 @ 12:30pm Eastern. Daily stand up/drop-in  (coming soon)
