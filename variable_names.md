@@ -33,6 +33,7 @@ Some rules for naming fields:
 * For checkboxes with a yes and no pair, add `_no` and `_yes` to the end. E.g., is_parent_yes and is_parent_no
 * For date variables other than birthdate, end the question with `_date`. E.g., filedanswer_date
 * Keep the length of variable names under 79 characters (unlikely you'll reach this limit, but just to be specific)
+* For large blocks of text divided into lines, use one variable to label the entire block of text as one field, rather than labelling     each line as a separate field individually.
 
 This makes use of work at https://github.com/knod/docassemble-standards/wiki/Standardized-Definitions-For-Variable-Names, 
 with some changes because we are using PDFs and not Word Documents.
