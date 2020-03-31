@@ -49,9 +49,9 @@ with some changes because we are using PDFs and not Word Documents.
 We have 4 main groups of people:
 
 1. the user, and possibly other users (user2, user3, etc.) representing co-parties
-2. a child/children
-3. the opposing party/parties
-4. a witness(es)
+1. a child/children
+1. the opposing party/parties
+1. a witness(es)
 
 <!--
 This needs to be user tested to make sure people actually do this.
