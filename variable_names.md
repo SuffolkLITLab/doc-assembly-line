@@ -23,6 +23,13 @@ consistent, both within a single form and from form to form.
 
 Some rules for naming fields:
 
+<!--
+  What's the deal with is_parent_yes/no? That's not for a variable name,
+  that's for a variable value
+-->
+
+## Naming conventions
+
 * Please use all lowercase characters for all fields.
 * Field names can only include letters, numbers, and underscores, and they _must_ start with a letter or underscore--not a number.
 * Keep the field names short, but descriptive. When you must choose between short length and clarity, choose clarity.
@@ -42,120 +49,143 @@ with some changes because we are using PDFs and not Word Documents.
 
 We have 4 main groups of people:
 
-* the user, and possibly a second/third user, user2, user3, etc., representing co-parties
-* children
-* the opposing party
-* a witness
+1. the user, and possibly other users (user2, user3, etc.) representing co-parties
+1. a child/children
+1. the opposing party/parties
+1. a witness(es)
+
+<!--
+This needs to be user tested to make sure people actually do this.
+If they don't, we need to collect what names they do use for those fields.
+Added it as an issue in SMEs board.
+-->
 
 You can use user2 for the spouse, etc.
 
-If user, user2, or other_party is an organization,
-Use the first_name field to store their full name.
+## General notes
+
+1. Alternatives: `user` and `user1` prefixes are treated the same way.
+1. Pluralities: When signifying a second or third of anything, you
+just increase the number in the prefix. For example, `user2` and `user3`.
+1. If users or other_parties is an organization,
+use the first_name field to store their full name.
+1. Full names will be a combination of the other name parts. It's
+built into docassemble as `str()`. For example, `str( users[0] )`.
+1. The value of the `gender` text field will be, when needed,
+sorted into "Other", "Female", and "Male". There will be a message
+to the user letting them know that their custom entry will be used
+wherever it's possible.
+1. All the individuals can have the fields you see in the `users` fields.
+
+
+
+<!--
+  Todo: Consider rearranging into different categories.
+
+### Prefixes
+With example of users
+
+### Human Information
+
+
+### Contact Info
+
+
+### Users
+
+  Todo: Add column for field type.
+-->
+
+
+
+<!-- Is `use_name_ful` something that a user would fill in? -->
 
 Label to use in the PDF | internal Docassemble Variable Name
 ------------------------|-----------------------------------
-user_name_first | user.name.first
-user_name_middle | user.name.middle
-user_name_last | user.name.last
-user_name_suffix | user.name.suffix
-user_name_full (will combine answers for first, middle, last, suffix) | equivalent to str(user)
-user_gender (text field) | user.gender
-user_gender_male (checkbox) | user.gender == "male"
-user_gender_female (checkbox) | user.gender == "female"
-user_gender_other (checkbox) | user.gender == "other"
-user_birthdate | user.birthdate
-user_age | equivalent to user.age_in_years()
-
+`user_name_first` | `users[0].name.first`
+`user_name_middle` | `users[0].name.middle`
+`user_name_last` | `users[0].name.last`
+`user_name_suffix` | `users[0].name.suffix`
+`user_name_full` | `str(users[0])`
+`user_gender` (text field) | `users[0].gender`
+`user_birthdate` | `users[0].birthdate`
+`user_age` | equivalent to `users[0].age_in_years()`
 
 Label to use in the PDF | internal Docassemble Variable Name
 ------------------------|-----------------------------------
-user2_name_first | users[0].name.first
-user2_name_middle | users[0].name.middle
-user2_name_last | users[0].name.last
-user2_name_suffix | users[0].name.suffix
-user2_name_full (will combine answers for first, middle, last, suffix) | equivalent to str(users[0])
-user2_gender (text field) | users[0].gender
-user2_gender_male (checkbox) | users[0].gender == "male"
-user2_gender_female (checkbox) | users[0].gender == "female"
-user2_gender_other (checkbox) | users[0].gender == "other"
-user2_birthdate | users[0].birthdate
-user2_age | equivalent to users[0].age_in_years()
+user1_name_first | users[0].name.first
+... | ...
+user2_name_first | users[1].name.first
+... | ...
 
+<!--
+  Needed?
+**Note** You can keep adding additional numbers to the user field name to get the same variables--including name, gender, address, etc., up to 10. That has effect of users[0], users[1], etc., but we'll only handle mapping to PDF up to 10.
+-->
 
-**Note** You can keep adding additional numbers to the user field name to get the same variables--including name, gender, address, etc., up to 10. That has effect of users[1], users[2], etc., but we'll only handle mapping to PDF up to 10.
+### Children
 
 Label to use in the PDF | internal Docassemble Variable Name
 ------------------------|-----------------------------------
-other_party_name_first | other_party.name.first
-other_party_name_middle | other_party.name.middle
-other_party_name_last | other_party.name.last
-other_party_name_suffix | other_party.name.suffix
-other_party_name_full (will combine answers for first, middle, last, suffix) | str(other_party)
+child_name_first | child[0].name.first
+child_name_middle | child[0].name.middle
+child_name_last | child[0].name.last
+child_name_suffix | child[0].name.suffix
+child_name_full (variation that combines all 4 part) | str(child[0])
+child_birthdate | child[0].birthdate
+child_gender | child[0].gender
+child1... | child[0]...
+child2... | child[1]...
+
+### Other parties
 
 Label to use in the PDF | internal Docassemble Variable Name
 ------------------------|-----------------------------------
-witness_name_full | witness_name_full
+other_party_name_first | other_parties[0].name.first
+other_party_name_middle | other_parties[0].name.middle
+other_party_name_last | other_parties[0].name.last
+other_party_name_suffix | other_parties[0].name.suffix
+other_party_name_full | str(other_parties[0])
 
 Label to use in the PDF | internal Docassemble Variable Name
 ------------------------|-----------------------------------
-child1_name_first | child[0].name.first
-child1_name_middle | child[0].name.middle
-child1_name_last | child[0].name.last
-child1_name_suffix | child[0].name.suffix
-child1_name_full (variation that combines all 4 part) | str(child[0])
-child1_birthdate | child[0].birthdate
-child1_gender | child[0].gender
-child1_gender_male (checkbox) | child[0].gender == "male"
-child1_gender_female (checkbox) | child[0].gender == "female"
-child1_gender_other (checkbox) | child[0].gender == "other"
+other_party1_name_first | other_parties[0].name.first
+... | ...
+other_party2_name_first | other_parties[0].name.first
+... | ...
 
-**Note** You can keep adding additional numbers to the child field name--including name, gender, address, etc. E.g., child2_name_full, child3_birthdate, etc., up to 10.
-
-
-## Contact information
+### Witnesses
 
 Label to use in the PDF | internal Docassemble Variable Name
 ------------------------|-----------------------------------
-user_address_street | user.address.address
-user_address_street2 | user.address.unit
-user_address_city | user.address.city
-user_address_state | user.address.state
-user_address_zip | user.address.zip
-user_address_on_one_line (variation with all address parts on one line) | user.address.on_one_line()
-user_address_city_state_zip (variation with just city, state, and zip on one line) | user.address.city + ', ' + user.address.state + ' ' + user.address.zip
-user_address_block (variation with full address parts, on 3 lines) | user.address.block()
-user_email | user.email
-user_phone | user.phone_number
+witness_name_first | str(witnesses[0])
+... | ...
+witness_name1_first | str(witnesses[0])
+... | ...
+witness_name2_first | str(witnesses[1])
+... | ...
 
+
+### Contact information
+_These fields can be used with other entities, like children, other parties, and witnesses._
 
 Label to use in the PDF | internal Docassemble Variable Name
 ------------------------|-----------------------------------
-user2_address_street | users[0].address.address
-user2_address_street2 | users[0].address.unit
-user2_address_city | users[0].address.city
-user2_address_state | users[0].address.state
-user2_address_zip | users[0].address.zip
-user2_address_on_one_line (variation with all address parts on one line) | users[0].address.on_one_line()
-user2_address_city_state_zip (variation with just city, state, and zip on one line) | users[0].address.city + ', ' + users[0].address.state + ' ' + users[0].address.zip
+user_address_street | users[0].address.address
+user_address_street2 | users[0].address.unit
+user_address_city | users[0].address.city
+user_address_state | users[0].address.state
+user_address_zip | users[0].address.zip
+user_address_on_one_line (variation with all address parts on one line) | users[0].address.on_one_line()
+user_address_city_state_zip (variation with just city, state, and zip on one line) | users[0].address.city + ', ' + users[0].address.state + ' ' + users[0].address.zip
 user_address_block (variation with full address parts, on 3 lines) | users[0].address.block()
-user2_email | users[0].email
-user2_phone | users[0].phone_number
-
-Label to use in the PDF | internal Docassemble Variable Name
-------------------------|-----------------------------------
-other_party_address_street | user.address.address
-other_party_address_street2 | user.address.unit
-other_party_address_city | user.address.city
-other_party_address_state | user.address.state
-other_party_address_zip | user.address.zip
-other_party_address_on_one_line (variation with all address parts on one line) | user.address.on_one_line()
-other_party_address_city_state_zip (variation with just city, state, and zip on one line) | user.address.city + ', ' + user.address.state + ' ' + user.address.zip
-other_party_address_block (variation with full address parts, on 3 lines) | user.address.block()
-other_party_email | user.email
-other_party_phone | user.phone_number
+user_email | users[0].email
+user_phone | users[0].phone_number
 
 
-## Court information
+### Court information
+
+<!-- Should court have court_address_county to be consistent with the other fields? -->
 
 Label to use in the PDF | internal Docassemble Variable Name
 ------------------------|-----------------------------------
@@ -169,28 +199,29 @@ docket_number | docket_number
 court, written out as a new field. You can likely cover up the field by setting a white background.
 
 Below variables will be filled in to have the full name(s) of the various people who fill that role. 
-E.g., you might have user/user2 both in the Plaintiff field. It would display as a list with a comma or and in between each name.
+E.g. you might have user/user2 both in the Plaintiff field. It would display as a list with a comma or 'and' in between each name.
 E.g., Joe Smith and Jane Smith.
 
-We will ask a question to determine which party is the plaintiff/defendant or petitioner/respondent
+We will ask a question to determine which party is the plaintiff/defendant or petitioner/respondent.
 
 Label to use in the PDF | internal Docassemble Variable Name
 ------------------------|-----------------------------------
-plaintiff | str(plaintiff)
-defendant  | str(defendant)
-petitioner | str(petitioner)
-respondent | str(respondent)
+plaintiff or plaintiffs | str(plaintiffs) (or something similar)
+defendant or defendants | str(defendants) (or something similar)
+petitioner or petitioners | str(petitioners) (or something similar)
+respondent or respondents | str(respondents) (or something similar)
 
-## Signatures
+### Signatures
 
 This needs to be a **digital signature field**. This option is hidden in some versions of Acrobat.
 This may help: https://answers.acrobatusers.com/Create-a-digital-signature-field-in-Acrobat-Pro-DC-q287451.aspx
 
 Label to use in the PDF | internal Docassemble Variable Name
 ------------------------|-----------------------------------
-user_signature | user.signature
-user2_signature | users[0].signature
-witness_signature | witness_signature
+user_signature | users[0].signature
+... | ...
+witness_signature | witnesses[0].signature
+... | ...
 
 Label to use in the PDF | internal Docassemble Variable Name
 ------------------------|-----------------------------------
