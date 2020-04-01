@@ -109,7 +109,7 @@ Label to use in the PDF | internal Docassemble Variable Name
 `user_name_full` | `str(users[0])`
 `user_gender` (text field) | `users[0].gender`
 `user_birthdate` | `users[0].birthdate`
-`user_age` | equivalent to `users[0].age_in_years()`
+`user_age` (this is always calculated from birthdate--don't use if you want to let the person type in a number) | equivalent to `users[0].age_in_years()`
 
 Label to use in the PDF | internal Docassemble Variable Name
 ------------------------|-----------------------------------
@@ -133,6 +133,7 @@ child_name_last | child[0].name.last
 child_name_suffix | child[0].name.suffix
 child_name_full (variation that combines all 4 part) | str(child[0])
 child_birthdate | child[0].birthdate
+child_age (this is always calculated from birthdate--don't use if you want to let the person type in a number) | child[0].age_in_years()
 child_gender | child[0].gender
 child1... | child[0]...
 child2... | child[1]...
