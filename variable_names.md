@@ -127,16 +127,16 @@ user2_name_first | users[1].name.first
 
 Label to use in the PDF | internal Docassemble Variable Name
 ------------------------|-----------------------------------
-child_name_first | child[0].name.first
-child_name_middle | child[0].name.middle
-child_name_last | child[0].name.last
-child_name_suffix | child[0].name.suffix
-child_name_full (variation that combines all 4 part) | str(child[0])
-child_birthdate | child[0].birthdate
-child_age (this is always calculated from birthdate--don't use if you want to let the person type in a number) | child[0].age_in_years()
-child_gender | child[0].gender
-child1... | child[0]...
-child2... | child[1]...
+child_name_first | children[0].name.first
+child_name_middle | children[0].name.middle
+child_name_last | children[0].name.last
+child_name_suffix | children[0].name.suffix
+child_name_full (variation that combines all 4 part) | str(children[0])
+child_birthdate | children[0].birthdate
+child_age (this is always calculated from birthdate--don't use if you want to let the person type in a number) | children[0].age_in_years()
+child_gender | children[0].gender
+child1... | children[0]...
+child2... | children[1]...
 
 ### Other parties
 
@@ -190,11 +190,14 @@ user_phone | users[0].phone_number
 
 Label to use in the PDF | internal Docassemble Variable Name
 ------------------------|-----------------------------------
-court_name (The full name of the court. E.g., Dorchester Division, Boston Municipal Court) | court
+docket_number | docket_number
+court_name (The full name of the court. E.g., Dorchester Division, Boston Municipal Court) | courts[0]
 court_division (E.g., District Court) | **not yet implemented**
 court_name_short (E.g., Lowell, if full name is Lowell District Court) | **not yet implemented**
-court_county (note: in many forms, this says 'ss' where the county should go) | court.address.county
-docket_number | docket_number
+court_county (note: in many forms, this says 'ss' where the county should go) | courts[0].address.county
+court1_name | courts[0].name
+court2_name | courts[1].name
+... | ...
 
 **Note**: just ignore/delete any drop-down menus for court name in existing court forms. We'll replace with the name of the
 court, written out as a new field. You can likely cover up the field by setting a white background.
