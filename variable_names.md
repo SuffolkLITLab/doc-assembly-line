@@ -161,9 +161,9 @@ Label to use in the PDF | internal Docassemble Variable Name
 ------------------------|-----------------------------------
 witness_name_first | str(witnesses[0])
 ... | ...
-witness_name1_first | str(witnesses[0])
+witness1_name_first | str(witnesses[0])
 ... | ...
-witness_name2_first | str(witnesses[1])
+witness2_name_first | str(witnesses[1])
 ... | ...
 
 
