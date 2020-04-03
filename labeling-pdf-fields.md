@@ -6,17 +6,17 @@ _Label names to use when editing fields in Adobe Acrobat or the Documate Field R
 
 ## What?
 
-Below we discuss names to use when relabeling fields in your template, and what they should be used for.
+Below we discuss which names to use when relabeling fields in your template, and what to use them for.
 
 **You should only use these label names for these specific purposes.**
 
-There are also suggestions for how to make new ones lower down.
+There are also suggestions for how to make new custom label names lower down.
 
 ## Why?
 
-We can create polished multi-lingual plain-language text and questions for all of these names. Any form that uses these names will have those polished versions added to them automatically.
+We can create polished multi-lingual plain-language text and questions for all of these pre-set names. Any form that uses these names will use those polished versions automatically.
 
-Also, if all these names match on all the forms a user is filling out, they will only have to answer each of the questions once. If three forms ask for a first name, the user will only have to answer that question once.
+Also, when a user is completing multiple forms at the same time, if all these names match on all the forms, they will only have to answer each of the questions once. If three forms ask for a first name but use different label names, the user would have to answer that question three times.
 
 Please contact us if you think we missed a commonly used field name that we should standardize.
 
@@ -67,6 +67,7 @@ Label to use in the PDF | When to use it
 `user_gender_female` | Label for a checkbox for a "female" gender choice
 `user_gender_other` | Label for a checkbox for an "other" gender choice
 `user_birthdate` | Label for a single field for the user's date of birth
+<strong>SIGNATURE</strong>
 `user_signature` | Label for a single field for the user's signature
 <strong>CONTACT INFORMATION</strong> | 
 `user_address_street` | Label for a field that asks for the user's house address
@@ -76,8 +77,6 @@ Label to use in the PDF | When to use it
 `user_address_zip` | Label for a field that asks for the user's zipcode
 `user_email` |  Label for a field that asks for the user's email address
 `user_phone` |  Label for a field that asks for the user's phone number
-<strong>SIGNATURE</strong>
-`user2_signature` | Label for a single field for the second user's signature
 
 **Note** The signature field needs to be a **digital signature field**. This option is hidden in some versions of Acrobat. This may help: https://answers.acrobatusers.com/Create-a-digital-signature-field-in-Acrobat-Pro-DC-q287451.aspx
 
@@ -103,6 +102,8 @@ Label to use in the PDF | When to use it
 `user2_gender_female` | Label for a checkbox for a "female" gender choice
 `user2_gender_other` | Label for a checkbox for an "other" gender choice
 `user2_birthdate` | Label for a single field for the second user's date of birth
+`user2_signature` | Label for a single field for the second user's signature
+
 And so on... |
 
 The same pattern works with `child`, `other_party`, and `witness`.
@@ -211,7 +212,7 @@ As you can see, you can put in labels for multiple courts.
 
 ### Signature date
 
-Label to use in the PDF | internal Docassemble Variable Name
+Label to use in the PDF | Meaning
 ------------------------|-----------------------------------
 `signature_date` | A label for the field to write the date the document was signed.
 
@@ -224,10 +225,10 @@ Some things you really need to do or it will be very hard to write code for the 
 1. Field names _must_ start with a letter or underscore (`_`) - not a number or anything else.
 2. Field names can only include **letters, numbers, and underscores**.
 3. Keep the length of variable names under 79 characters (unlikely you'll reach this limit, but just to be specific).
-4. When you run across a large area that gives room for writing a paragraph, make one big field and give it one label. Don't divide it into individual lines.
+4. When you run across a large area that gives room for writing a paragraph, make one big field and give it one label. Don't divide it into individual lines. 
 <!-- Check that last one carefully. I'm not sure I understood what was meant. -->
 
-Code is also about communicating with each other. The label names you come up with now are ones people will need to work with in the future. You don't have to do too much, but try not to label things with `field1`, `field2`, and so on.
+Code is also about communicating with each other. The label names you come up with now are ones people will need to work with in the future. You don't have to do too much, but try not to label things with Adobe's defaults or `field1`, `field2`, and so on.
 
 #### Useful label conventions
 
