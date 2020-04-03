@@ -212,9 +212,27 @@ As you can see, you can put in labels for multiple courts.
 
 ### Signature date
 
-Label to use in the PDF | Meaning
+Label to use in the PDF | When to use it
 ------------------------|-----------------------------------
 `signature_date` | A label for the field to write the date the document was signed.
+
+
+### Dates in general
+
+Labels for fields that are asking for a full date should generally end in `_date` (e.g. `incident_date`), but some forms want you to put dates in differently. For example, they want the day, month, and year given separately.
+
+Let's pretend everyting is about an `incident` just to simplify these examples.
+
+Label to use in the PDF | When to use it
+------------------------|-----------------------------------
+`incident_date` | A label for a field to write the full date of the incident.
+`incident_date_day` | A label for a field to write the day of the month of the incident.
+`incident_date_month` | A label for a field to write the month of the incident.
+`incident_date_day_month` | A label for a field to write both the day and the month of the incident. (Yes, we have run into this)
+`incident_4_digit_year` | A label for a field to write the 4-digit year of the incident (e.g. 2018).
+`incident_2_digit_year` | A label for a field to write the 2-digit year of the incident (e.g. 18 as in 02/03/**18**).
+`incident_season` | A label for a field to write the season of the incident (e.g. winter).
+
 
 ### Custom labels
 
@@ -238,7 +256,7 @@ Here are some suggestions for making helpful labels:
 * Separate multiple words in a label with an underscore: `_`
 * Make the labels descriptive. <!-- examples of good and bad ones -->
 * If they can be descriptive _and_ short, that's even better.
-* When you have several related fields in a row, try to start the labels with the feature that groups them together, e.g., asset_checking, asset_savings, etc. It makes alphabetical sorting easier. <!-- Why is that important? -->
+* When you have several related fields in a row, try to start the labels with the feature that groups them together, e.g., `asset_checking`, `asset_savings`, etc. It makes alphabetical sorting easier. <!-- Why is that important? -->
 * Avoid acronyms and abbreviations, other than very common ones such as `id` for identification.
 * Use verb/noun pairs for checkboxes and radio buttons. For example, `is_parent`, `speaks_spanish`, `has_assets`: `user_is_parent`, etc.
 * For checkboxes with a yes/no pair, add `_yes` and `_no` to the end. E.g., `user_is_parent_yes` and `user_is_parent_no`
