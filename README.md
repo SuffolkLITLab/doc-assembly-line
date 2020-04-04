@@ -4,4 +4,6 @@ This project is an assembly line to rapidly create mobile-friendly online court 
 
 _Note: the situation is quickly evolving, and everything here could change at any moment._
 
-You can find a more robust description of our work, including how to join our team on our website at [https://suffolklitlab.org/doc-assembly-line/](https://suffolklitlab.org/doc-assembly-line/)
+You can find a more robust description of our work, including how to join our team on our website at:
+
+[https://suffolklitlab.org/doc-assembly-line/](https://suffolklitlab.org/doc-assembly-line/)
