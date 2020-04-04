@@ -4,15 +4,15 @@ _Label names to use when editing fields in Adobe Acrobat or the Documate Field R
 
 <!-- Add links up there to tutorials on how to use those -->
 
-## What?
+# What?
 
 Below we discuss which names to use when relabeling fields in your template, and what to use them for.
 
-**You should only use these label names for these specific purposes.**
+**<ins>You should only use these label names for these specific purposes.</ins>**
 
 There are also suggestions for how to make new custom label names lower down.
 
-## Why?
+# Why?
 
 We can create polished multi-lingual plain-language text and questions for all of these pre-set names. Any form that uses these names will use those polished versions automatically.
 
@@ -20,7 +20,7 @@ Also, when a user is completing multiple forms at the same time, if all these na
 
 Please contact us if you think we missed a commonly used field name that we should standardize.
 
-## Things we need to think about
+# Things we need to think about
 
 <!-- Link to tutorial on editing field names in a PDF at some point -->
 
@@ -35,9 +35,9 @@ Second, a form has two kinds of fields.
 
 We'll explain how to work with that information in the sections below.
 
-## The labels
+# The labels
 
-### Information about people
+## Information about people
 
 We have specific kinds of people that our code will recognize:
 
@@ -52,7 +52,7 @@ Each of these people have things about them that we want to record. For example,
 
 We use those in combination to create our field names.
 
-#### Labels for fields for the user to fill in
+### _Labels for fields for the user to fill in_
 
 Let's just talk about one user.
 
@@ -78,7 +78,7 @@ Label to use in the PDF | When to use it
 `user_email` |  Label for a field that asks for the user's email address
 `user_phone` |  Label for a field that asks for the user's phone number
 
-**Note** The signature field needs to be a **digital signature field**. This option is hidden in some versions of Acrobat. This may help: https://answers.acrobatusers.com/Create-a-digital-signature-field-in-Acrobat-Pro-DC-q287451.aspx
+**Note:** The signature field needs to be a **digital signature field**. This option is hidden in some versions of Acrobat. This may help: https://answers.acrobatusers.com/Create-a-digital-signature-field-in-Acrobat-Pro-DC-q287451.aspx
 
 If we want to talk about more than one "user", we can say which user we mean - the first one, the second one, the third one, and so on.
 
@@ -116,9 +116,13 @@ Label to use in the PDF | When to use it
 
 <!-- TODO: Witness documentation needs to be fixed -->
 
-**Note** If a `user` or other the opposing party is an organization, just use the `user_name_first`, `other_party_name_first`, etc. fields to store their full name.
+**Note:** If a `user` or other the opposing party is an organization, just use the `user_name_first`, `other_party_name_first`, etc. fields to store their full name.
 
-#### Labels for fields that will be automatically filled in
+**What if you have a field that needs one of these special labels?**
+
+Another one of the trickier problems. If you find yourself needing one of these "special" labels for another field, you'll need to find another way. For example, you can make a custom label that's slightly different and more specific label, like `user_age_at_time_of_conviction`. Learn more about [making custom labels](#custom-labels).
+
+### _Labels for fields that will be automatically filled in_
 
 Sometimes a form asks you for information multiple times. With a digital form we don't always have to make the user do that. There are a few labels for fields that this program can fill in automatically. If a `user` has put in their date of birth, they don't need to then fill in their age in a different section - the program can figure it out.
 
@@ -163,20 +167,7 @@ Label to use in the PDF | When to use it
 `user_name_full__2` | Automatically fill in a second field that needs to show the user's full name.
 `user_name_full__3` | Automatically fill in a third field that needs to show the user's full name.
 
-ONLY EVER use this method for this reason, never for something else.
-
-**What if you have a field that needs one of these special labels?**
-
-Another one of the trickier problems. If you find yourself needing one of these "special" labels for another field, you'll need to find another way. For example, you can use a slightly different and more specific label:
-
-Label to use in the PDF | When to use it
-------------------------|-----------------------------------
-`user_name_full_input` | Custom label for a field where the user should fill in their full name
-`user_age_input` | Custom label for a field where the user should fill in their age
-
-You might also be able to get more specific, making a custom name using the conventions that are described below for other custom names. For example, if you want to make a label for a field where the user has to put their age at the time of their conviction, you can make your own variable name - `user_age_at_conviction`.
-
-See [Custom labels](#custom-labels) below.
+<ins>ONLY EVER</ins> use this method for this reason, never for something else.
 
 **What if you want to print a list of people, like plantiffs?**
 
@@ -193,7 +184,7 @@ Label to use in the PDF | Meaning
 
 The final form will show a list of names that makes sense. For example, if there were two (Susan and Talia), you would see "Susan and Talia", and so on.
 
-### Court information
+## Court information
 
 Label to use in the PDF | When to use it
 ------------------------|-----------------------------------
@@ -210,14 +201,14 @@ As you can see, you can put in labels for multiple courts.
 
 **Note**: just ignore/delete any drop-down menus for court names in existing court forms. We'll replace that with the name of the court, written out as a new field. You can likely cover up the field by setting a white background.
 
-### Signature date
+## Signature date
 
 Label to use in the PDF | When to use it
 ------------------------|-----------------------------------
 `signature_date` | A label for the field to write the date the document was signed.
 
 
-### Dates in general
+## Dates in general
 
 Labels for fields that are asking for a full date should generally end in `_date` (e.g. `incident_date`), but some forms want you to put dates in differently. For example, they want the day, month, and year given separately.
 
@@ -234,9 +225,9 @@ Label to use in the PDF | When to use it
 `incident_season` | A label for a field to write the season of the incident (e.g. winter).
 
 
-### Custom labels
+## Custom labels
 
-#### Important
+### _Important Rules_
 
 Some things you really need to do or it will be very hard to write code for the labels. These are those things:
 
@@ -248,7 +239,7 @@ Some things you really need to do or it will be very hard to write code for the 
 
 Code is also about communicating with each other. The label names you come up with now are ones people will need to work with in the future. You don't have to do too much, but try not to label things with Adobe's defaults or `field1`, `field2`, and so on.
 
-#### Useful label conventions
+### _Useful label conventions_
 
 Here are some suggestions for making helpful labels:
 
@@ -262,8 +253,6 @@ Here are some suggestions for making helpful labels:
 * For checkboxes with a yes/no pair, add `_yes` and `_no` to the end. E.g., `user_is_parent_yes` and `user_is_parent_no`
 * For date variables (other than birthdate), end the question with `_date`. E.g., `a_label_date`
 
-This makes use of work at https://github.com/knod/docassemble-standards/wiki/Standardized-Definitions-For-Variable-Names, with some changes because we are using PDFs and not Word Documents.
-
-## Thank you!
+# Thank you!
 
 Thank you for joining us to help make a difference in people's lives!
