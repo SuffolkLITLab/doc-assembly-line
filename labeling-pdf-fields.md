@@ -4,6 +4,9 @@ _Label names to use when editing fields in Adobe Acrobat or the Documate Field R
 
 <!-- Add links up there to tutorials on how to use those -->
 
+[![](https://suffolklitlab.org/doc-assembly-line/images/naming_vid.png)](https://youtu.be/qpfZon2M-GU)
+Relevent Video: [The Basics of Naming Fields](https://youtu.be/qpfZon2M-GU)
+
 # What?
 
 Below we discuss which names to use when relabeling fields in your template, and what to use them for.
