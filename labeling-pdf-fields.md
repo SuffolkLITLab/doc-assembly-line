@@ -118,6 +118,10 @@ Label to use in the PDF | When to use it
 
 **Note:** If a `user` or other the opposing party is an organization, just use the `user_name_first`, `other_party_name_first`, etc. fields to store their full name.
 
+**What if you have a field that needs one of these special labels?**
+
+Another one of the trickier problems. If you find yourself needing one of these "special" labels for another field, you'll need to find another way. For example, you can make a custom label that's slightly different and more specific label, like `user_age_at_time_of_conviction`. Learn more about [making custom labels](#custom-labels).
+
 ### _Labels for fields that will be automatically filled in_
 
 Sometimes a form asks you for information multiple times. With a digital form we don't always have to make the user do that. There are a few labels for fields that this program can fill in automatically. If a `user` has put in their date of birth, they don't need to then fill in their age in a different section - the program can figure it out.
@@ -164,19 +168,6 @@ Label to use in the PDF | When to use it
 `user_name_full__3` | Automatically fill in a third field that needs to show the user's full name.
 
 <ins>ONLY EVER</ins> use this method for this reason, never for something else.
-
-**What if you have a field that needs one of these special labels?**
-
-Another one of the trickier problems. If you find yourself needing one of these "special" labels for another field, you'll need to find another way. For example, you can use a slightly different and more specific label:
-
-Label to use in the PDF | When to use it
-------------------------|-----------------------------------
-`user_name_full_input` | Custom label for a field where the user should fill in their full name
-`user_age_input` | Custom label for a field where the user should fill in their age
-
-You might also be able to get more specific, making a custom name using the conventions that are described below for other custom names. For example, if you want to make a label for a field where the user has to put their age at the time of their conviction, you can make your own variable name - `user_age_at_conviction`.
-
-See [Custom labels](#custom-labels) below.
 
 **What if you want to print a list of people, like plantiffs?**
 
