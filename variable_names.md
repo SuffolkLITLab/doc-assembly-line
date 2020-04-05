@@ -1,5 +1,14 @@
-# Variable/field names to use when editing fields in Adobe Acrobat or the Documate Field Renamer
+# Field name to variable name conversion in our code
 
+As of 04/05, this conversion is happening in the [`interview-generator.py` in the wizard](https://github.com/SuffolkLITLab/docassemble-assemblylinewizard/tree/master/docassemble/assemblylinewizard). A lot of the stuff mentioned below is happening specifically in [`map_names`](https://github.com/SuffolkLITLab/docassemble-assemblylinewizard/blob/master/docassemble/assemblylinewizard/interview_generator.py#L696).
+
+## This document is out of date.
+
+This doc provides a decent sense of how we're turning variables into code, but the actual var names themselves are not up to date as of the morning of 04/05.
+
+For that, the labeler docs at 'labeling-pdf-fields.md' are getting upated faster. [This branch of the labeler doc](https://github.com/SuffolkLITLab/doc-assembly-line/blob/labeling-doc/labeling-pdf-fields.md) is most current.
+
+## Older documentation.
 Below is a list of names to use when renaming fields in your template, and suggestions for adding new ones.
 The advantage of using the same names we picked out below is that we will able to write great, multi-lingual, plain-language
 versions of all of the questions for the standard names, and we'll use those on all of the interviews.
