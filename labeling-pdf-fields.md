@@ -167,7 +167,7 @@ Label to use in the PDF | When to use it
 
 What if you have a field that needs one of these special labels?
 
-This is one of the trickier problems. If you find yourself needing one of these "special" labels for another field, you'll need to find another name for it. For example, you can make a custom label that's slightly different and more specific label, like `user_age_at_time_of_conviction`. Learn more about [making custom labels](#custom-field-labels) further down.
+This is one of the trickier problems. If you find yourself needing one of these "special" labels for another field, you'll need to find another name for it. For example, you can make a custom label that's slightly different and more specific label, like `plaintiff_age_at_time_of_conviction`. Learn more about [making custom labels](#custom-field-labels) further down.
 
 ## Custom field labels
 
@@ -242,29 +242,29 @@ What if there are two plaintiffs or three docket numbers?
 We will answer that question sometime soon. For now, ask us in the Slack #assembly-line channel.
 
 <!-- 
-If we want to talk about more than one "user", we can say which user we mean - the first one, the second one, the third one, and so on.
+If we want to talk about more than one "plaintiff", we can say which plaintiff we mean - the first one, the second one, the third one, and so on.
 
 Label to use in the PDF | When to use it
 ------------------------|-----------------------------------
-`user1_name_first` | Label for a field that asks for the first user's first name
-`user2_name_first` | Label for a field that asks for the second user's first name
+`plaintiff1_name_first` | Label for a field that asks for the first plaintiff's first name
+`plaintiff2_name_first` | Label for a field that asks for the second plaintiff's first name
 
-And so on. For example, you might use `user2` for the spouse.
+And so on. For example, you might use `plaintiff2` for the spouse.
 
-Each of those "users" can have any of the values that were described above. Here's an example of some fields a second user might be filling in.
+Each of those "plaintiffs" can have any of the values that were described above. Here's an example of some fields a second plaintiff might be filling in.
 
 Label to use in the PDF | When to use it
 ------------------------|-----------------------------------
-`user2_name_first` | Label for a field that asks for the second user's first name
-`user2_name_middle` | Label for a field that asks for the second user's middle name
-`user2_name_last` | Label for a field that asks for the second user's last name
-`user2_name_suffix` | Label for a field that asks for the suffix of the second user's name
-`user2_gender` | Label for a text field asking for the second user to write in their gender
-`user2_gender_male` | Label for a checkbox for a "male" gender choice
-`user2_gender_female` | Label for a checkbox for a "female" gender choice
-`user2_gender_other` | Label for a checkbox for an "other" gender choice
-`user2_birthdate` | Label for a single field for the second user's date of birth
-`user2_signature` | Label for a single field for the second user's signature
+`plaintiff2_name_first` | Label for a field that asks for the second plaintiff's first name
+`plaintiff2_name_middle` | Label for a field that asks for the second plaintiff's middle name
+`plaintiff2_name_last` | Label for a field that asks for the second plaintiff's last name
+`plaintiff2_name_suffix` | Label for a field that asks for the suffix of the second plaintiff's name
+`plaintiff2_gender` | Label for a text field asking for the second plaintiff to write in their gender
+`plaintiff2_gender_male` | Label for a checkbox for a "male" gender choice
+`plaintiff2_gender_female` | Label for a checkbox for a "female" gender choice
+`plaintiff2_gender_other` | Label for a checkbox for an "other" gender choice
+`plaintiff2_birthdate` | Label for a single field for the second plaintiff's date of birth
+`plaintiff2_signature` | Label for a single field for the second plaintiff's signature
 
 And so on... |
 
