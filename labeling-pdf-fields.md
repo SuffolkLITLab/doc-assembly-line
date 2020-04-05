@@ -13,7 +13,7 @@ _Label names to use when editing fields in Adobe Acrobat or the Documate Field R
    1. [Custom labels](#custom-field-labels)
 1. [Advanced lessons](#field-labels-advanced-lessons)
    1. [Custom date fields](#custom-dates)
-   1. [Automatically filling fields](#fields-that-the-program-can-fill-in-by-itself)
+   1. [Automatically filling fields](Fields that the program can fill in by itself)
 
 [![](https://suffolklitlab.org/doc-assembly-line/images/naming_vid.png)](https://youtu.be/qpfZon2M-GU)
 Relevent Video: [The Basics of Naming Fields](https://youtu.be/qpfZon2M-GU)
@@ -146,7 +146,7 @@ We have some pre-defined words for court information too.
 
 Label to use in the PDF | When to use it
 ------------------------|-----------------------------------
-`docket_number` | A label for a field to write a docket number.
+`docket_number` | A label for a field for the form filler to write a docket number. (Not for the court!)
 `court_name` | A label to write the full name of the court. E.g., Dorchester Division, Boston Municipal Court.
 `court_county` | A label to write the county that the court is in. Note: in many forms, this says 'ss' where the county should go.
 <!-- court_division (E.g., District Court) | **not yet implemented** -->
@@ -154,7 +154,9 @@ Label to use in the PDF | When to use it
 
 You can see `prefix`es a `suffix`es here too. `court` and `name`. They follow simiar rules. <!-- Added 04/05 -->
 
-**Note**: just ignore/delete any drop-down menus for court names in existing court forms. We'll replace that with the name of the court, written out as a new field. You can likely cover up the field by setting a white background.
+**Note 1:** `docket_number` here is ONLY for the client(s). It's not for 'court use only' areas of the form.
+
+**Note 2:** Just ignore/delete any drop-down menus for court names in existing court forms. We'll replace that with the name of the court, written out as a new field. You can likely cover up the field by setting a white background.
 
 ## Signature date
 
