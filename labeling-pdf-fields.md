@@ -37,7 +37,13 @@ If you have more questions, please ask us in the Slack channel.
 
 # Field labels: The basics
 
-Every field label in a PDF has to have a unique label. They cannot be repeated. We'll talk more about that later, but it's good to remember.
+<!-- These two paragraphs are new as of 04/05 -->
+
+To make label names, we stich together bits of words with meanings. We do that in English too - there are `lamp`s and there's the color `red`. We put those together to describe a `red lamp`. In our labels, that might look a bit more like `lamp_red`. We might call `lamp` a prefix and `red` a suffix, though that kind of language might get complicated if we get into things like `lamp_red_tall`.
+
+These label rules work like that too - you'll combine prefixes and suffixes to build your labels, so look out for that pattern: `prefix_suffix`
+
+**Note:** Every field label in a PDF has to be unique. They cannot be repeated. We'll talk more about that later, but it's good to remember.
 
 ## Information about people
 
@@ -60,9 +66,11 @@ We will have specific types of people (or organizations) that our code will reco
 1. `debt_collector`
 1. `creditor`
 
+These are are considered the `prefix`es we described before. <!-- Added 04/05 -->
+
 **NOTE:** Do not add other details to those names. For example, a plaintiff that is a tenant is still just a `plaintiff` in our PDFs.
 
-When these are people, they have similar things we want to record about them. For example, their first name (`name_first`). When a field is for a `plaintiff`'s first name, you will combine the two: `plaintiff_name_first`.
+When these are people, they have similar things we want to record about them. For example, their first name (`name_first`). These will be our `suffixes`. When a field is for a `plaintiff`'s first name, you will combine the two: `plaintiff_name_first`.
 
 These are pre-defined words you can use as field labels for a plaintiff:
 
@@ -93,14 +101,15 @@ Label to use in the PDF | When to use it
 <!-- Should this be in a different document? -->
 <!-- **Note:** The signature field needs to be a **digital signature field**. This option is hidden in some versions of Acrobat. This may help: https://answers.acrobatusers.com/Create-a-digital-signature-field-in-Acrobat-Pro-DC-q287451.aspx -->
 
-**What if you need to use a field again, though?** As we said, each field label in a PDF needs to be unique, but some forms ask for a field multiple times. For example, the plaintiff's name might come up more than once. In those cases, you add two underscores (`_`) and a number:
-
-`__2` or `__3` (and so on)
+<!-- Additional descriptions and examples added 04/05 -->
+**What if you need to use a field again, though?** As we said, each field label in a PDF needs to be unique, but some forms ask for a field multiple times. For example, the plaintiff's name might come up more than once. In those cases, you add two underscores (`__`) and a number. This will go on the very end of the label, after all the suffixes. So, `prefix_suffix__2`, `prefix_suffix__3`, and so on:
 
 Label to use in the PDF | When to use it
 ------------------------|-----------------------------------
-`plaintiff__2` | Label for the second field that asks for that plaintiff's first name
-`plaintiff__3` | Label for the third field that asks for that plaintiff's first name
+`plaintiff_name_first__2` | Label for the second field that asks for that plaintiff's first name
+`plaintiff_name_first__3` | Label for the third field that asks for that plaintiff's first name
+`plaintiff__2` | Label for the second field that asks for that plaintiff's full name
+`plaintiff__3` | Label for the third field that asks for that plaintiff's full name
 
 And so on.
 
@@ -114,6 +123,7 @@ Label to use in the PDF | When to use it
 ------------------------|-----------------------------------
 `defendant` | Label for a field that asks for the defendant's full name
 `spouse_signature` | Label for a field that asks for the spouse's signature
+`spouse_signature__2` | Label for a field that asks for the spouse's signature a second time <!-- Example 04/05 -->
 
 And so on.
 
@@ -131,6 +141,8 @@ Label to use in the PDF | When to use it
 `court_county` | A label to write the county that the court is in. Note: in many forms, this says 'ss' where the county should go.
 <!-- court_division (E.g., District Court) | **not yet implemented** -->
 <!-- court_name_short (E.g., Lowell, if full name is Lowell District Court) \| **not yet implemented** -->
+
+You can see `prefix`es a `suffix`es here too. `court` and `name`. They follow simiar rules. <!-- Added 04/05 -->
 
 **Note**: just ignore/delete any drop-down menus for court names in existing court forms. We'll replace that with the name of the court, written out as a new field. You can likely cover up the field by setting a white background.
 
@@ -170,9 +182,12 @@ Here are some suggestions for making helpful labels:
 * Make the labels descriptive. <!-- examples of good and bad ones -->
 * If they can be descriptive _and_ short, that's even better.
 * Avoid acronyms and abbreviations, other than very common ones such as `id` for identification.
+* When you have several related fields in a row, it could help the coders if you make your own `prefix` and `suffix`es. Make a `prefix` out of the the feature that groups them together, e.g. `asset_checking`, `asset_savings`, etc. It makes alphabetical sorting easier. <!-- Why is that important? -->
+
+** In addition to `prefix`es and `suffix`es:**
+
 * Use verb/noun pairs for checkboxes. For example, `plaintiff_is_parent`, `defendant_speaks_spanish`, `petitioner_has_assets`, etc.
-* For checkboxes with a yes/no pair, add `_yes` and `_no` to the end. E.g., `defendant_knows_english_yes` and `defendant_knows_english_no`
-* When you have several related fields in a row, try to start the labels with the feature that groups them together, e.g., `asset_checking`, `asset_savings`, etc. It makes alphabetical sorting easier. <!-- Why is that important? -->
+* For checkboxes with a yes/no pair, add `_yes` and `_no` to the end as an _extra_ suffix. E.g., `defendant_knows_english_yes` and `defendant_knows_english_no` - `prefix_suffix_suffix`
 
 
 # Thank you!
@@ -269,6 +284,6 @@ The finished form will show a list of names that makes sense. For example, if th
 
 For the curious: `plaintiff_name__2` and such things work like this under the hood.
 
-# Congradulations
+# Congradulations!
 
 You have made it to the end of all of the current documentation! You've got moxie, that's for sure, and it'll serve you well in life!
