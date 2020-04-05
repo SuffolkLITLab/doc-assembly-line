@@ -67,7 +67,6 @@ We will have specific types of people (or organizations) that our code will reco
 1. `guardian`
 1. `caregiver`
 1. `guardian_ad_litem`
-1. `lawyer`
 1. `attorney`
 1. `translator`
 1. `witness`
