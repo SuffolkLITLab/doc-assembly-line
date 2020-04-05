@@ -22,12 +22,12 @@ Relevent Video: [The Basics of Naming Fields](https://youtu.be/qpfZon2M-GU)
 <!-- Section tweaked 04/05 -->
 1. Explanations of the use of pre-determined names you should use when labeling fields in a PDF to make automation possible.
 1. A refence guide for those pre-determined names.
+3. Rules (and some guidelines) for making [custom labels](#custom-field-labels), since most of your labels will be custom labels.
 
-**<ins>You should use the labels in here exactly as they appear and only for the specific purposes described below.</ins>**
+**<ins>You should use the pre-defined labels in here exactly as they appear and only for the specific purposes described below.</ins>**
 
-Don't work on memorizing this material, though. You can learn what's in here and come back to look up specifics later when it you need them.
+Don't work on memorizing this material, though. You can take in what's in here and come back to look up specifics later when it you need them.
 
-There are also guidelines for making [custom labels](#custom-field-labels) when you need to.
 
 # Why?
 
@@ -165,6 +165,8 @@ This is one of the trickier problems. If you find yourself needing one of these 
 
 ## Custom field labels
 
+Most of your labels will be custom labels, but there are still some rules to follow. Also, we can do some automation with custom labels too if they follow certain patterns. <!-- Tweak custom label expectations 04/05 -->
+
 ### _Important Rules_
 
 Some things you really need to do or it will be very hard to write code for the labels:
@@ -186,9 +188,9 @@ Here are some suggestions for making helpful labels:
 * Make the labels descriptive. <!-- examples of good and bad ones -->
 * If they can be descriptive _and_ short, that's even better.
 * Avoid acronyms and abbreviations, other than very common ones such as `id` for identification.
-* When you have several related fields in a row, it could help the coders if you make your own `prefix` and `suffix`es. Make a `prefix` out of the the feature that groups them together, e.g. `asset_checking`, `asset_savings`, etc. It makes alphabetical sorting easier. <!-- Why is that important? -->
+* When you have several related fields in a row, it could help with automation if you make your own `prefix` and `suffix`es. Make a `prefix` out of the the feature that groups them together, e.g. `asset_checking`, `asset_savings`, etc. It makes alphabetical sorting easier. <!-- Why is that important? -->
 
-** In addition to `prefix`es and `suffix`es:**
+** Additional `suffix`es to help with automation:** <!-- Tweaked 04/05 -->
 
 * Use verb/noun pairs for checkboxes. For example, `plaintiff_is_parent`, `defendant_speaks_spanish`, `petitioner_has_assets`, etc.
 * For checkboxes with a yes/no pair, add `_yes` and `_no` to the end as an _extra_ suffix. E.g., `defendant_knows_english_yes` and `defendant_knows_english_no` - `prefix_suffix_suffix`
