@@ -12,6 +12,8 @@ _Label names to use when editing fields in Adobe Acrobat or the Documate Field R
    1. [Signature date](#signature-date)
    1. [Custom labels](#custom-field-labels)
 1. [Advanced lessons](#field-labels-advanced-lessons)
+   1. [Custom date fields](#custom-dates)
+   1. [Automatically filling fields](Fields that the program can fill in by itself)
 
 [![](https://suffolklitlab.org/doc-assembly-line/images/naming_vid.png)](https://youtu.be/qpfZon2M-GU)
 Relevent Video: [The Basics of Naming Fields](https://youtu.be/qpfZon2M-GU)
@@ -209,7 +211,7 @@ Thank you for joining us to help make a difference in people's lives!
 
 Again, don't try to memorize these. After your first read through, use this more like reference material. <!-- Added 04/05 -->
 
-## Dates in general
+## Custom dates
 
 ```
 "Forms keep asking for dates in really weird ways."
@@ -217,6 +219,8 @@ Again, don't try to memorize these. After your first read through, use this more
 ```
 
 Labels for fields that are asking for a full date should generally end in `_date` (e.g. `incident_date`), but some forms want you to put dates in differently. For example, they want the day, month, or year given separately.
+
+(Remember that `prefix_birtdate` and [`signature_date`](signature_date) are pre-determined labels.)
 
 Let's pretend everyting is about an `incident` just to simplify these examples.
 
@@ -276,7 +280,7 @@ Label to use in the PDF | When to use it
 
 ## Fields that the program can fill in by itself
 
-If someone puts in their birthdate, why would they have to put in their age somewhere else? The program can figure out how old they are, so it can fill that in by itself.
+If someone puts in their birthdate, why would they have to put in their age somewhere else? The program can figure out how old they are, so it can fill that in by itself. There are some other things it will know how to print as well.
 
 <!--
   TODO: Add to coder documentation:
