@@ -51,6 +51,8 @@ These label rules work like that too - you'll combine prefixes and suffixes to b
 
 ## Information about people
 
+### People prefixes
+
 We will have specific types of people (or organizations) that our code will recognize:
 
 1. `plaintiff`
@@ -73,6 +75,8 @@ We will have specific types of people (or organizations) that our code will reco
 These are are considered the `prefix`es we described before. <!-- Added 04/05 -->
 
 **NOTE:** Do not add other details to those names. For example, a plaintiff that is a tenant is still just a `plaintiff` in our PDFs.
+
+### People suffixes
 
 When these are people, they have similar things we want to record about them. For example, their first name (`name_first`). These will be our `suffixes`. When a field is for a `plaintiff`'s first name, you will combine the two: `plaintiff_name_first`.
 
