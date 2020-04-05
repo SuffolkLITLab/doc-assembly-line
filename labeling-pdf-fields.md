@@ -92,9 +92,8 @@ Label to use in the PDF | When to use it
 `plaintiff_name_last` | Label for a field that asks for the plaintiff's last name
 `plaintiff_name_suffix` | Label for a field that asks for the suffix of the plaintiff's name
 `plaintiff_gender` | Label for a text field asking for the plaintiff to write in their gender
-`plaintiff_gender_male` | Label for a checkbox for a "male" gender choice
 `plaintiff_gender_female` | Label for a checkbox for a "female" gender choice
-`plaintiff_gender_other` | Label for a checkbox for an "other" gender choice
+`plaintiff_gender_male` | Label for a checkbox for a "male" gender choice
 `plaintiff_birthdate` | Label for a single field for the plaintiff's date of birth
 <strong>CONTACT INFORMATION</strong> | 
 `plaintiff_address_street` | Label for a field that asks for the plaintiff's house address
