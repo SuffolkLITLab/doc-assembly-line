@@ -274,10 +274,17 @@ Label to use in the PDF | When to use it
 
 If someone puts in their birthdate, why would they have to put in their age somewhere else? The program can figure out how old they are, so it can fill that in by itself.
 
+<!--
+  TODO: Add to coder documentation:
+  Coders - we need to grandfather the old uses in. That is, labelers
+  may still use old conventions like `plaintiff_address_on_one_line`
+  and `users`.
+-->
+
 Label to use in the PDF | When to use it
 ------------------------|-----------------------------------
 `plaintiff_age` | Label for a field where the plaintiff's age will be inserted automatically
-`plaintiff_address_on_one_line` | Label for a field where the plaintiff's address will be inserted on one line
+`plaintiff_address_one_line` | Label for a field where the plaintiff's address will be inserted on one line
 `plaintiff_address_city_state_zip` | Label for a field where the plaintiff's city, state, and zip will be inserted on one line
 `plaintiff_address_block` | Label for a field where the plaintiff's full address will be inserted on 3 lines
 
