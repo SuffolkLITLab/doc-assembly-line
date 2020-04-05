@@ -19,9 +19,13 @@ Relevent Video: [The Basics of Naming Fields](https://youtu.be/qpfZon2M-GU)
 
 # What?
 
-Instructions on some pre-determined names you should use when labeling fields in a PDF to make automation possible.
+<!-- Section tweaked 04/05 -->
+1. Explanations of the use of pre-determined names you should use when labeling fields in a PDF to make automation possible.
+1. A refence guide for those pre-determined names.
 
 **<ins>You should use the labels in here exactly as they appear and only for the specific purposes described below.</ins>**
+
+Don't work on memorizing this material, though. You can learn what's in here and come back to look up specifics later when it you need them.
 
 There are also guidelines for making [custom labels](#custom-field-labels) when you need to.
 
@@ -197,6 +201,7 @@ Thank you for joining us to help make a difference in people's lives!
 
 # Field labels: Advanced lessons
 
+Again, don't try to memorize these. After your first read through, use this more like reference material. <!-- Added 04/05 -->
 
 ## Dates in general
 
