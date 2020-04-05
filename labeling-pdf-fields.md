@@ -200,8 +200,10 @@ Thank you for joining us to help make a difference in people's lives!
 
 ## Dates in general
 
-"Forms keep asking for dates in really weird ways."<br/>
+```
+"Forms keep asking for dates in really weird ways."
 - A coder
+```
 
 Labels for fields that are asking for a full date should generally end in `_date` (e.g. `incident_date`), but some forms want you to put dates in differently. For example, they want the day, month, or year given separately.
 
