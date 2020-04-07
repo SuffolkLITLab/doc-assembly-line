@@ -13,7 +13,8 @@ _Label names to use when editing fields in Adobe Acrobat or the Documate Field R
    1. [Custom labels](#custom-field-labels)
 1. [Advanced lessons](#field-labels-advanced-lessons)
    1. [Custom date fields](#custom-dates)
-   1. [Automatically filling fields](Fields that the program can fill in by itself)
+   1. [More than one of a person or item](more-than-one)
+   1. [Automatically filling fields](#fields-that-the-program-can-fill-in-by-itself)
 
 [![](https://suffolklitlab.org/doc-assembly-line/images/naming_vid.png)](https://youtu.be/qpfZon2M-GU)
 Relevent Video: [The Basics of Naming Fields](https://youtu.be/qpfZon2M-GU)
@@ -239,7 +240,7 @@ Label to use in the PDF | When to use it
 
 What if there are two plaintiffs or three docket numbers? Or multiples of any other item?
 
-If we want to talk about more than one "plaintiff", we can say which plaintiff we mean - the first one, the second one, the third one, and so on. We add a number as part of our prefix.
+This program can hanlde plural values. If we want to talk about more than one "plaintiff", we can say which plaintiff we mean - the first one, the second one, the third one, and so on. We add a number as part of our prefix.
 
 Label to use in the PDF | When to use it
 ------------------------|-----------------------------------
@@ -258,6 +259,7 @@ And so on. The same pattern works with other prefixes, like `child`, `defendant`
 
 Label to use in the PDF | When to use it
 ------------------------|-----------------------------------
+`docket_number3` | Label for a field that asks for the third docket number
 `child3_name_first` | Label for a field that asks for the third child's first name
 `defendant4_name_first` | Label for a field that asks for the fourth 'party's first name
 `witness6_name_first` | Label for a field that asks for the sixth witness's first name
