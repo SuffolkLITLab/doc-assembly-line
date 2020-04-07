@@ -231,8 +231,10 @@ Label to use in the PDF | When to use it
 `incident_date_day` | A label for a field to write the day of the month of the incident.
 `incident_date_month` | A label for a field to write the month of the incident.
 `incident_date_day_month` | A label for a field to write both the day and the month of the incident. (Yes, we have run into this)
-`incident_4_digit_year` | A label for a field to write the 4-digit year of the incident (e.g. 2018).
-`incident_2_digit_year` | A label for a field to write the 2-digit year of the incident (e.g. 18 as in 02/03/**18**).
+`incident_date_4_digit_year` | A label for a field to write the 4-digit year of the incident (e.g. 2018).
+`incident_date_2_digit_year` | A label for a field to write the 2-digit year of the incident (e.g. 18 as in 02/03/**18**).
+<!-- Need to support `incident_2_digit_year` | A label for a field to write the 2-digit year of the incident (e.g. 18 as in 02/03/**18**).-->
+<!-- Need to support `incident_4_digit_year` | A label for a field to write the 4-digit year of the incident (e.g. 2018). -->
 <!-- `incident_season` | A label for a field to write the season of the incident (e.g. winter). -->
 
 
