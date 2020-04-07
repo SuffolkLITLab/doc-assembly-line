@@ -237,45 +237,37 @@ Label to use in the PDF | When to use it
 
 ## More than one
 
-What if there are two plaintiffs or three docket numbers?
+What if there are two plaintiffs or three docket numbers? Or multiples of any other item?
 
-We will answer that question sometime soon. For now, ask us in the Slack #assembly-line channel.
-
-<!-- 
-If we want to talk about more than one "plaintiff", we can say which plaintiff we mean - the first one, the second one, the third one, and so on.
+If we want to talk about more than one "plaintiff", we can say which plaintiff we mean - the first one, the second one, the third one, and so on. We add a number as part of our prefix.
 
 Label to use in the PDF | When to use it
 ------------------------|-----------------------------------
 `plaintiff1_name_first` | Label for a field that asks for the first plaintiff's first name
 `plaintiff2_name_first` | Label for a field that asks for the second plaintiff's first name
 
-And so on. For example, you might use `plaintiff2` for the spouse.
-
-Each of those "plaintiffs" can have any of the values that were described above. Here's an example of some fields a second plaintiff might be filling in.
+Each of those "plaintiffs" can have any of the suffixes that were described above. Here's an example of some fields a second plaintiff might be filling in.
 
 Label to use in the PDF | When to use it
 ------------------------|-----------------------------------
-`plaintiff2_name_first` | Label for a field that asks for the second plaintiff's first name
-`plaintiff2_name_middle` | Label for a field that asks for the second plaintiff's middle name
-`plaintiff2_name_last` | Label for a field that asks for the second plaintiff's last name
-`plaintiff2_name_suffix` | Label for a field that asks for the suffix of the second plaintiff's name
+`plaintiff2` | Label for a field that asks for the second plaintiff's full name
 `plaintiff2_gender` | Label for a text field asking for the second plaintiff to write in their gender
-`plaintiff2_gender_male` | Label for a checkbox for a "male" gender choice
-`plaintiff2_gender_female` | Label for a checkbox for a "female" gender choice
-`plaintiff2_gender_other` | Label for a checkbox for an "other" gender choice
-`plaintiff2_birthdate` | Label for a single field for the second plaintiff's date of birth
 `plaintiff2_signature` | Label for a single field for the second plaintiff's signature
 
-And so on... |
-
-The same pattern works with `child`, `other_party`, and `witness`.
+And so on. The same pattern works with other prefixes, like `child`, `defendant`, and `witness`.
 
 Label to use in the PDF | When to use it
 ------------------------|-----------------------------------
 `child3_name_first` | Label for a field that asks for the third child's first name
-`other_party4_name_first` | Label for a field that asks for the fourth 'party's first name
+`defendant4_name_first` | Label for a field that asks for the fourth 'party's first name
 `witness6_name_first` | Label for a field that asks for the sixth witness's first name
- -->
+
+You can combine this rule with `__`. For example, you can combine the prefix of the third `plaintiff` with the post-suffix of the second appearance of a field. That is
+
+Label to use in the PDF | When to use it
+------------------------|-----------------------------------
+`plaintiff2__3` | Label for the third appearance of the second plaintiff's full name.
+`plaintiff2_signature__3` | Label for the third appearance of the second plaintiff's signature.
 
 
 ## Fields that the program can fill in by itself
