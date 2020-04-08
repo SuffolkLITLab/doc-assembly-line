@@ -17,7 +17,7 @@ _Label names to use when editing fields in Adobe Acrobat or the Documate Field R
    1. [Automatically filling fields](#fields-that-the-program-can-fill-in-by-itself)
 
 [![](https://suffolklitlab.org/doc-assembly-line/images/naming_vid.png)](https://youtu.be/qpfZon2M-GU)
-Relevent Video: [The Basics of Naming Fields](https://youtu.be/qpfZon2M-GU)
+Video of overview: [The Basics of Naming Fields](https://youtu.be/qpfZon2M-GU)
 
 
 # What?
