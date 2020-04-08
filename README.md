@@ -5,3 +5,8 @@ This project is an assembly line to rapidly create mobile-friendly online court 
 You can find a more robust description of our work, including how to join our team on our website at:
 
 [https://suffolklitlab.org/doc-assembly-line/](https://suffolklitlab.org/doc-assembly-line/)
+
+Other relevant repos include: 
+
+- [docassemble-assemblylinewizard](https://github.com/SuffolkLITLab/docassemble-assemblylinewizard)
+- [docassemble-MAVirtualCourt](https://github.com/SuffolkLITLab/docassemble-MAVirtualCourt)
