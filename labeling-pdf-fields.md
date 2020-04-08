@@ -13,10 +13,11 @@ _Label names to use when editing fields in Adobe Acrobat or the Documate Field R
    1. [Custom labels](#custom-field-labels)
 1. [Advanced lessons](#field-labels-advanced-lessons)
    1. [Custom date fields](#custom-dates)
-   1. [Automatically filling fields](Fields that the program can fill in by itself)
+   1. [More than one of a person or item](#more-than-one)
+   1. [Automatically filling fields](#fields-that-the-program-can-fill-in-by-itself)
 
 [![](https://suffolklitlab.org/doc-assembly-line/images/naming_vid.png)](https://youtu.be/qpfZon2M-GU)
-Video Overview: [The Basics of Naming Fields](https://youtu.be/qpfZon2M-GU)
+Relevent Video: [The Basics of Naming Fields](https://youtu.be/qpfZon2M-GU)
 
 
 # What?
@@ -92,9 +93,8 @@ Label to use in the PDF | When to use it
 `plaintiff_name_last` | Label for a field that asks for the plaintiff's last name
 `plaintiff_name_suffix` | Label for a field that asks for the suffix of the plaintiff's name
 `plaintiff_gender` | Label for a text field asking for the plaintiff to write in their gender
-`plaintiff_gender_male` | Label for a checkbox for a "male" gender choice
 `plaintiff_gender_female` | Label for a checkbox for a "female" gender choice
-`plaintiff_gender_other` | Label for a checkbox for an "other" gender choice
+`plaintiff_gender_male` | Label for a checkbox for a "male" gender choice
 `plaintiff_birthdate` | Label for a single field for the plaintiff's date of birth
 <strong>CONTACT INFORMATION</strong> | 
 `plaintiff_address_street` | Label for a field that asks for the plaintiff's house address
@@ -145,7 +145,7 @@ We have some pre-defined words for court information too.
 
 Label to use in the PDF | When to use it
 ------------------------|-----------------------------------
-`docket_number` | A label for a field to write a docket number.
+`docket_number` | A label for a field for the form filler to write a docket number. (Not for the court!)
 `court_name` | A label to write the full name of the court. E.g., Dorchester Division, Boston Municipal Court.
 `court_county` | A label to write the county that the court is in. Note: in many forms, this says 'ss' where the county should go.
 <!-- court_division (E.g., District Court) | **not yet implemented** -->
@@ -153,7 +153,9 @@ Label to use in the PDF | When to use it
 
 You can see `prefix`es a `suffix`es here too. `court` and `name`. They follow simiar rules. <!-- Added 04/05 -->
 
-**Note**: just ignore/delete any drop-down menus for court names in existing court forms. We'll replace that with the name of the court, written out as a new field. You can likely cover up the field by setting a white background.
+**Note 1:** `docket_number` here is ONLY for the client(s). It's not for 'court use only' areas of the form.
+
+**Note 2:** Just ignore/delete any drop-down menus for court names in existing court forms. We'll replace that with the name of the court, written out as a new field. You can likely cover up the field by setting a white background.
 
 ## Signature date
 
@@ -229,52 +231,47 @@ Label to use in the PDF | When to use it
 `incident_date_day` | A label for a field to write the day of the month of the incident.
 `incident_date_month` | A label for a field to write the month of the incident.
 `incident_date_day_month` | A label for a field to write both the day and the month of the incident. (Yes, we have run into this)
-`incident_4_digit_year` | A label for a field to write the 4-digit year of the incident (e.g. 2018).
-`incident_2_digit_year` | A label for a field to write the 2-digit year of the incident (e.g. 18 as in 02/03/**18**).
+`incident_date_4_digit_year` | A label for a field to write the 4-digit year of the incident (e.g. 2018).
+`incident_date_2_digit_year` | A label for a field to write the 2-digit year of the incident (e.g. 18 as in 02/03/**18**).
+<!-- Need to support `incident_2_digit_year` | A label for a field to write the 2-digit year of the incident (e.g. 18 as in 02/03/**18**).-->
+<!-- Need to support `incident_4_digit_year` | A label for a field to write the 4-digit year of the incident (e.g. 2018). -->
 <!-- `incident_season` | A label for a field to write the season of the incident (e.g. winter). -->
 
 
 ## More than one
 
-What if there are two plaintiffs or three docket numbers?
+What if there are two plaintiffs or three docket numbers? Or multiples of any other item?
 
-We will answer that question sometime soon. For now, ask us in the Slack #assembly-line channel.
-
-<!-- 
-If we want to talk about more than one "plaintiff", we can say which plaintiff we mean - the first one, the second one, the third one, and so on.
+This program can hanlde plural values. If we want to talk about more than one "plaintiff", we can say which plaintiff we mean - the first one, the second one, the third one, and so on. We add a number as part of our prefix.
 
 Label to use in the PDF | When to use it
 ------------------------|-----------------------------------
 `plaintiff1_name_first` | Label for a field that asks for the first plaintiff's first name
 `plaintiff2_name_first` | Label for a field that asks for the second plaintiff's first name
 
-And so on. For example, you might use `plaintiff2` for the spouse.
-
-Each of those "plaintiffs" can have any of the values that were described above. Here's an example of some fields a second plaintiff might be filling in.
+Each of those "plaintiffs" can have any of the suffixes that were described above. Here's an example of some fields a second plaintiff might be filling in.
 
 Label to use in the PDF | When to use it
 ------------------------|-----------------------------------
-`plaintiff2_name_first` | Label for a field that asks for the second plaintiff's first name
-`plaintiff2_name_middle` | Label for a field that asks for the second plaintiff's middle name
-`plaintiff2_name_last` | Label for a field that asks for the second plaintiff's last name
-`plaintiff2_name_suffix` | Label for a field that asks for the suffix of the second plaintiff's name
+`plaintiff2` | Label for a field that asks for the second plaintiff's full name
 `plaintiff2_gender` | Label for a text field asking for the second plaintiff to write in their gender
-`plaintiff2_gender_male` | Label for a checkbox for a "male" gender choice
-`plaintiff2_gender_female` | Label for a checkbox for a "female" gender choice
-`plaintiff2_gender_other` | Label for a checkbox for an "other" gender choice
-`plaintiff2_birthdate` | Label for a single field for the second plaintiff's date of birth
 `plaintiff2_signature` | Label for a single field for the second plaintiff's signature
 
-And so on... |
-
-The same pattern works with `child`, `other_party`, and `witness`.
+And so on. The same pattern works with other prefixes, like `child`, `defendant`, and `witness`.
 
 Label to use in the PDF | When to use it
 ------------------------|-----------------------------------
+`docket_number3` | Label for a field that asks for the third docket number
 `child3_name_first` | Label for a field that asks for the third child's first name
-`other_party4_name_first` | Label for a field that asks for the fourth 'party's first name
+`defendant4_name_first` | Label for a field that asks for the fourth 'party's first name
 `witness6_name_first` | Label for a field that asks for the sixth witness's first name
- -->
+
+You can combine this rule with `__`. For example, you can combine the prefix of the third `plaintiff` with the post-suffix of the second appearance of a field. That is
+
+Label to use in the PDF | When to use it
+------------------------|-----------------------------------
+`plaintiff2__3` | Label for the third appearance of the second plaintiff's full name.
+`plaintiff2_signature__3` | Label for the third appearance of the second plaintiff's signature.
 
 
 ## Fields that the program can fill in by itself
