@@ -78,6 +78,8 @@ These are are considered the `prefix`es we described before. <!-- Added 04/05 --
 
 **NOTE:** Do not add other details to those names. For example, a plaintiff that is a tenant is still just a `plaintiff` in our PDFs.
 
+`unknown_role` isn't something our program will account for, but it's a name you can use when you don't know what role name to use. It can remind you (or alert other folks) to get a consult from someone who would know more.
+
 ### People suffixes
 
 When these are people, they have similar things we want to record about them. For example, their first name (`name_first`). These will be our `suffixes`. When a field is for a `plaintiff`'s first name, you will combine the two: `plaintiff_name_first`.
