@@ -153,7 +153,7 @@ Label to use in the PDF | When to use it
 <!-- court_division (E.g., District Court) | **not yet implemented** -->
 <!-- court_name_short (E.g., Lowell, if full name is Lowell District Court) \| **not yet implemented** -->
 
-You can see `prefix`es a `suffix`es here too. `court` and `name`. They follow simiar rules. <!-- Added 04/05 -->
+You can see `prefix`es and `suffix`es here too. `court` and `name`. They follow similar rules. <!-- Added 04/05; edited 04/13 -->
 
 **Note 1:** `docket_number` here is ONLY for the client(s). It's not for 'court use only' areas of the form.
 
@@ -306,6 +306,6 @@ The finished form will show a list of names that makes sense. For example, if th
 
 For the curious: `plaintiff_name__2` and such things work like this under the hood.
 
-# Congradulations!
+# Congratulations! <!-- Edited 04/13 -->
 
 You have made it to the end of all of the current documentation! You've got moxie, that's for sure, and it'll serve you well in life!
