@@ -180,7 +180,7 @@ Most of your labels will be custom labels, but there are still some rules to fol
 
 Some things you really need to do or it will be very hard to write code for the labels:
 
-1. Field names **mus start with a letter or underscore** (`_`) - not a number or anything else.
+1. Field names **must start with a letter or underscore** (`_`) - not a number or anything else.
 1. Field names can only include **letters, numbers, and underscores**. No spaces or any other character.
 1. When you run across a large area that gives room for writing a paragraph, make sure it's one big field. If it's divided into multiple lines, put a message about it in its trello card or on the Slack #assembly-line channel.
 <!-- Check this previous one carefully. I'm not sure I understood what was meant. -->
