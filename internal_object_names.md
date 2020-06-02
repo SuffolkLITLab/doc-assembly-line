@@ -24,6 +24,8 @@ One major difference: plural rather than singular variable names. Why? in a PDF 
 1. `debt_collectors`
 1. `creditors`
 
+To access the _first_ user in the list, use the syntax `users[0]`. You can access attributes of the `users[0]` like this: `users[0].attribute_name`. This is the same approach for each of the other lists.
+
 ## Attributes and methods that go along with people
 
 ### Special MAVirtualCourt methods and attributes
