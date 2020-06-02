@@ -73,12 +73,48 @@ are attributes that are actually objects, and thus documented in different secti
 * `courts[0].location.longitude`
 * `courts[0].has_po_box`
 * `courts[0].description`
-* `courts[0].address`
+* `courts[0].address`, which includes `courts[0].address.county`
 
 * `docket_numbers` a list of strings
 * `signature_date`
 
-## Variables needed to be defined for delivery to the court
+## Variables that need to be defined if you are building an interview from scratch to deliver to the court
 
+* `basic_questions_intro_screen` is the first variable you should list in your mandatory interview order control block
+* `user_role` is an optional variable. You can define it to "plaintiff" or "defendant" if you know in advance which role the user will have
+* `allowed_courts` is a list of court names. See below for a list of all possible values:
+```
+code: |
+  allowed_courts = [
+      "Boston Municipal Court",
+      "District Court",
+      "Superior Court",
+      "Housing Court",
+      "Probate and Family Court",
+      "Juvenile Court",
+      "Land Court",
+      ]
+```
+* `preferred_court` is an optional variable (unusued until we get approval for final court selector). It can be set to the name of ONE of the available trial court departments.
 * `final_form_to_file`: this variable should represent the final attachment as a PDF.
 * `form_to_sign`: this variable should represent the final attachment as a PDF, without a signature.
+
+### Customizing whether there is one/many or no items in a list
+
+Sometimes you may want to avoid the "are there any" question. For example: if there is always at least one opposing party.
+
+```
+code: |
+  # set the number of other parties to exactly one
+  other_parties.there_are_any = True
+  other_parties.there_is_another = False
+```
+
+If the docket number is never known in advance:
+
+```
+code: |
+  docket_numbers[0] = ''
+  docket_numbers.auto_gather = False
+  docket_numbers.gathered = True
+```  
