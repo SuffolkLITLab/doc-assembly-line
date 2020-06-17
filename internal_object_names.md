@@ -145,13 +145,16 @@ one PDF, you can use these variable names directly.
 
 A way to turn a Docx attachment into a pdf is with `pdf_concatenate(my_docx_variable_name)`
 
+
 * form_to_file_no_cover
 * form_to_sign (optional--only for preview screen)
 * final_form_to_file: the basic-questions file automatically combines form_to_file_no_cover with the cover page to create this. Normally never need to deal with this variable at all.
 
-
 These variables can all be created automatically for you by the basic-questions file, but you may not like those results. Make
 the first two manually for most interviews.
+
+You should also define this variable: 
+* download_titles as a Python list. Like this: `download_title = ["My form title", "My second form title"]`
 
 ### Review screen
 
