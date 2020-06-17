@@ -154,7 +154,7 @@ These variables can all be created automatically for you by the basic-questions 
 the first two manually for most interviews.
 
 You should also define this variable: 
-* download_titles as a Python list. Like this: `download_title = ["My form title", "My second form title"]`
+* download_titles as a Python list. Like this: `download_titles = ["My form title", "My second form title"]`
 
 ### Review screen
 
