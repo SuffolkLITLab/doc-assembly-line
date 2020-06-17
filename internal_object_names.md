@@ -118,3 +118,44 @@ code: |
   docket_numbers.auto_gather = False
   docket_numbers.gathered = True
 ```  
+
+### How to make a signature block optional in a Docx template
+
+Version with only one person signing:
+
+```
+{%p if defined('users[0].signature') %}
+{{ users[0].signature }}	
+{%p endif %}
+```
+
+Version for multiple signers:
+```
+{%p if defined('users[0].signature') %}
+{%p for user in users %}
+{{ user.signature }}
+{%p endfor %}
+{%p endif %}
+```
+
+### Variables used for sending files to court
+
+The below all need to be PDFs. Generally, do this in code. But if you have an interview with only
+one PDF, you can use these variable names directly.
+
+* form_to_file_no_cover
+* form_to_sign (optional--only for preview screen)
+* final_form_to_file: the basic-questions file automatically combines form_to_file_no_cover with the cover page to create this. Normally never need to deal with this variable at all.
+
+
+These variables can all be created automatically for you by the basic-questions file, but you may not like those results. Make
+the first two manually for most interviews.
+
+### Review screen
+
+* review_all_sections
+
+We have a button by default on download/signature pages that refers to "review_all_sections" event.
+
+You can make this a review screen for your form. If you don't, it will be a list of all of the navigation sections for your form.
+
