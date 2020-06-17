@@ -159,3 +159,99 @@ We have a button by default on download/signature pages that refers to "review_a
 
 You can make this a review screen for your form. If you don't, it will be a list of all of the navigation sections for your form.
 
+```
+---
+event: review_all_sections
+question: |
+  Review of your answers
+subquestion: |
+  
+  ${showifdef('form_to_sign')}
+
+  % if defined('form_delivery_complete'):
+  **Warning: your form has already been delivered.** Any changes you make
+  will _not_ be sent to the court.
+
+  % endif
+  Click a section to revisit the answers from that section.
+
+  % for section in section_links(nav):
+  * ${section}
+  % endfor
+  
+  Press "${word("Resume")}" to resume the
+  interview.
+buttons:
+  ${word("Resume")}: continue
+```
+
+
+### Preview and Final Download Screen with Send to Court buttons
+```
+---
+id: review before signature
+need: form_to_sign
+continue button field: [PLACEHOLDER: PREVIEW SCREEN VARIABLE]
+question: |
+  Nearly finished
+subquestion: |
+  You are almost done! Please click on the form below. It will open in a new window so you 
+  can review it and make sure it is correct.
+  
+  Don't forget to come back to this page to click to the final step of signing and sending 
+  the form to the court. 
+  
+   ${form_to_sign }
+
+progress: 95
+---
+id: download form
+event: download
+comment: |
+  The attachment email screen relies on final_form_to_file being defined. This
+  will be built from the interview_metadata dictionary's contents, but if you
+  add any addenda you will want to set this in a code block somewhere that takes
+  priority over basic-questions.yml.
+decoration: file-download
+question: |
+  % if not defined('email_success') or not email_success:
+  Review, Download, and Send Form
+  % else:
+  Form delivered
+  % endif
+subquestion: |
+  % if not defined('email_success') or not email_success:
+  Thank you ${users[0]}. Your form is ready to send to the court. **It is not
+  delivered until you complete the delivery process below.**
+
+  1. Click the preview image below to open the form in a new window. Correct any errors using the "Make changes" button below.
+  1. Download and save or print a copy of this form for your 
+  records.
+  1. Click the "Submit to ${courts[0]}" button to send it to the court. 
+  1. You will have a chance to add instructions to the clerk and see the cover page before final delivery.
+  % else:
+  If you do not hear from the court in 1 business day, call the Trial Court’s
+  Emergency HelpLine 833-91-COURT (833-912-6878).
+  
+  The Emergency HelpLine is open:  
+  8:30am - 4:30pm,   
+  Monday - Friday.
+  % endif
+  
+  ${ form_to_file_no_cover }  
+  
+  ${action_button_html(url_action('review_all_sections'), icon='edit', label=word("Make changes"))}
+  
+  % if not defined('email_success') or not email_success:
+    ${ action_button_html( url_action('form_delivery_complete'), id_tag="submitToCourt", label="Submit to " + str(courts[0].name), icon=send_icon, size="md", color="primary")}
+    
+  Or download/email below:
+  % else:
+    Your email has already been delivered to ${courts[0]}
+    
+  [:file-download: Download with cover page](${final_form_to_file.url_for()})    
+  % endif
+progress: 100
+attachment code: [PLACEHOLDER: ATTACHMENT VARIABLE]
+section: download
+```
