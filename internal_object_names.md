@@ -143,6 +143,8 @@ Version for multiple signers:
 The below all need to be PDFs. Generally, do this in code. But if you have an interview with only
 one PDF, you can use these variable names directly.
 
+A way to turn a Docx attachment into a pdf is with `pdf_concatenate(my_docx_variable_name)`
+
 * form_to_file_no_cover
 * form_to_sign (optional--only for preview screen)
 * final_form_to_file: the basic-questions file automatically combines form_to_file_no_cover with the cover page to create this. Normally never need to deal with this variable at all.
