@@ -159,7 +159,7 @@ We have a button by default on download/signature pages that refers to "review_a
 
 You can make this a review screen for your form. If you don't, it will be a list of all of the navigation sections for your form.
 
-```
+```yaml
 ---
 event: review_all_sections
 question: |
@@ -187,7 +187,7 @@ buttons:
 
 
 ### Preview and Final Download Screen with Send to Court buttons
-```
+```yaml
 ---
 id: review before signature
 need: form_to_sign
