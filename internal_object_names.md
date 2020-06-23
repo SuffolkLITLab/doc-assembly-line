@@ -119,6 +119,22 @@ code: |
   docket_numbers.gathered = True
 ```  
 
+### How to trigger additional signatures
+
+`signature_fields` is a list of strings representing variable names.
+
+Adding signature field for all of the clients:
+
+```python
+signature_fields = []
+for client in clients:
+  signature_fields.append(client.intrinsicName)
+```
+
+Adding a custom item to the list:
+
+`signature_fields = ["my_signature"]`
+
 ### How to make a signature block optional in a Docx template
 
 Version with only one person signing:
