@@ -139,20 +139,24 @@ Adding a custom item to the list:
 
 Version with only one person signing:
 
-```
+{% raw %}
+```jinja2
 {%p if defined('users[0].signature') %}
 {{ users[0].signature }}	
 {%p endif %}
 ```
+{% endraw %}
 
 Version for multiple signers:
-```
+{% raw %}
+```jinja2
 {%p if defined('users[0].signature') %}
 {%p for user in users %}
 {{ user.signature }}
 {%p endfor %}
 {%p endif %}
 ```
+{% endraw %}
 
 ### Variables used for sending files to court
 
