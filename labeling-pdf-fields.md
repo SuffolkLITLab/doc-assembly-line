@@ -50,33 +50,81 @@ To make label names, we stich together bits of words with meanings. We do that i
 
 These label rules work like that too - you'll combine prefixes and suffixes to build your labels, so look out for that pattern: `prefix_suffix`
 
-**Note:** Every field label in a PDF has to be unique. They cannot be repeated. We'll talk more about that later, but it's good to remember.
+**Note:** Every field label in a PDF has to be unique. They cannot be repeated. We'll talk more about that later, but it's good to remember. In a Microsoft Word docx file, there is no rule that the fields need to be unique.
+
+## Figure out who is using your form
+
+Every form is used by someone. Most forms have parties to a case. Some are not filed with a court, so they may only have
+a single user. Some are not filed with a court, but still have a user and an opposing or "other" party.
+
+For example: in a Motion to Vacate Default Judgment, the user of the form is always going to be the defendant. In a form that creates a new case,
+the user of the form is always going to be the plaintiff or petitioner.
 
 ## Information about people
 
-### People prefixes
+### Label parties to the case with party-specific labels
 
-We will have specific types of people (or organizations) that our code will recognize:
+The person who is using your form and the person who your form's user is opposing should always get one of the
+special labels below:
 
-1. `plaintiff`
-1. `defendant`
-1. `petitioner`
-1. `respondent`
-1. `spouse`
-1. `child` (child of one of the people on the form. (some legal help with this please))
-1. `parent` (Parent of one of the people on the form. (some help here too))
-1. `guardian`
-1. `caregiver`
-1. `guardian_ad_litem`
-1. `attorney`
-1. `translator`
-1. `witness`
-1. `debt_collector`
-1. `creditor`
+**Note:** We made PDF labels singular because you can't work with lists in many PDF editors. Docx variables representing people are all plural.
+Internally, all variables representing people are plural.
+
+PDF label | Docx label | Use case
+----------|------------|----------
+`user` | `users`, `user[0]`, or `user[n]` (where `n` is any whole number; use sequentially | Will display the full name of the person who is filling out the online form
+`other_party` | `other_parties`, `other_parties[0]`, or `other_parties[n]` | The person suing or being sued by the person filling out the form; someone on the "other side" of the case.
+`plaintiff` | `plaintiffs`, `plaintiffs[0]`, `plaintiffs[n]` | Plaintiff in the case if we don't know if the plaintiff is the user or other party.
+`defendant` | `defendants`, `defendants[0]`, `defendants[n]` | Defendant in the case if we don't know if the defendant is the user or other party.
+`petitioner` | `petitioners`, `petitioners[0]`, `petitioners[n]` | Petitioner in the case if we don't know if the petitioner is the user or other party.
+`respondent` | `respondents`, `respondents[0]`, `respondents[n]` | Plaintiff in the case if we don't know if the plaintiff is the user or other party.
+
+If the form has room for two people on one side of the case, you can reference `user__1` and `user__1` (on a PDF) or `users[0]` and `users[1]` (in a Docx). It's
+important to always use one of these 4 labels for people who are actually part of the case, since we use those internally in many many places in our standard
+questions and to communicate information to the court.
+
+Never use names like:
+
+* Tenant
+* Landlord
+* Parent
+
+etc. that can be converted into party labels, like `Plaintiff` or `Defendant`, if the form is being used by the
+tenant or landlord or parent. Every form should have at least one of the 6 party labels above.
+
+It's best to use `user`/`users` and `other_party`/`other_parties` when you know that the form is always used by a plaintiff or defendant. For example,
+a form that is always used by a tenant in an eviction case will normally get labeled with `user`/`users` any place that the form mentions 
+either `tenant` or `defendant`. In any form that starts a new case, we can always label the PDF with `user` where the `plaintiff` name goes.
+
+### Use one of these exact prefixes for other "people" on the form when at all possible
+
+You may want to use other kinds of labels on the form for miscellaneous people who are
+associated with the form, but are not parties to the case. Using one of these labels below
+that we have pre-selected tells our tool that these are people, so we can handle things like addresses,
+birthdates, etc. correctly.
+
+We can freely add more labels to this list if you need them for your form. Ideally, talk to us about that
+before running your form through the wizard.
+
+Never use any of the labels below when the person identified by the label is a party to the case.
+For example, if they are the person using the form or the person who is on the opposing side of the case
+from the user of the form.
+
+PDF label | Docx label | Use case
+----------|------------|----------
+`spouse` | `spouses`, `spouses[0]`, `spouses[n]` | A spouse whose information goes on the form but is not a party to the case.
+`child` | `children`, `children[0]`, `children[n]` | Any child whose information goes on the form.
+`parent` | `parents`, `parents[0]`, `parents[n]` | A parent who is not a party to the case.
+`guardian`  | `guardians`, `guardians[0]`, `guardians[n]` | A guardian who is not a party to the case.
+`caregiver`| `caregivers` |
+`guardian_ad_litem` | `guardians_ad_litem` |
+`attorney` | `attorneys` |
+`translator` | `translators` | 
+`witness` | `witnesses` |
+`debt_collector` | `debt_collectors` | 
+`creditor` | `creditors` | 
 
 These are are considered the `prefix`es we described before. <!-- Added 04/05 -->
-
-**NOTE:** Do not add other details to those names. For example, a plaintiff that is a tenant is still just a `plaintiff` in our PDFs.
 
 `unknown_role` isn't something our program will account for, but it's a name you can use when you don't know what role name to use. It can remind you (or alert other folks) to get a consult from someone who would know more.
 
