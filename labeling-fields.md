@@ -1,4 +1,4 @@
-# PDF Label Names
+# Field Label Names for Docx and PDF files
 
 _Label names to use when editing fields in Adobe Acrobat or the Documate Field Renamer_
 
