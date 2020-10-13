@@ -1,0 +1,257 @@
+comment: |
+  The metadata section controls the tab title and saved interview title. You can delete this section if you include this YAML file in another YAML file.
+metadata:
+  title: |
+    Military Affidavit
+  short title: |
+    Military Affidavit
+---
+comment: |
+  This section is used by MAVirtualCourts to control how some of the questions work.
+mandatory: True
+code: |
+  interview_metadata # make sure we initialize the object
+  if not defined("interview_metadata['military_affidavit']"):
+    interview_metadata.initializeObject('military_affidavit')
+  interview_metadata['military_affidavit'].update({
+    'title': 'Military Affidavit',
+    'short title': 'Military Affidavit',
+    'description': 'Use this online form to complete a military affidavit to comply with the Servicemembers Civil Relief Act.',
+    'original_form': '',
+    'allowed courts': [
+      'Boston Municipal Court',
+      'District Court',
+      'Housing Court',
+      'Juvenile Court',
+      'Land Court',
+      'Probate and Family Court',
+      'Superior Court',
+    ],
+    'categories': [
+      'Consumer and Debt',
+      'Domestic Violence / Safety of self',
+      'Education',
+      'Employment / Unemployment',
+      'Family Law',
+      'Guardianship',
+      'Health and Mental Health',
+      'Housing',
+      'Immigration',
+      'Income and benefits',
+      'Rights of incarcerated/formerly incarcerated',
+    ],
+    'logic block variable': 'military_affidavit',
+    'attachment block variable': 'military_affidavit_attachment',
+    'typical role': 'unknown',
+  })
+---
+include:
+  - docassemble.MAVirtualCourt:basic-questions.yml
+---
+features:
+  navigation: True
+---
+sections:
+  - review_military_affidavit: Review your answers
+---
+id: interview_order_military_affidavit
+code: |
+  # This is a placeholder to control logic flow in this interview
+
+  basic_questions_intro_screen 
+  military_affidavit_intro
+  # Set the allowed courts for this interview
+  allowed_courts = interview_metadata["military_affidavit"]["allowed courts"]
+  nav.set_section('review_military_affidavit')
+  # Below sets the user_role by asking a question.
+  # You can set user_role directly instead to either 'plaintiff' or 'defendant'
+  user_ask_role
+  court_department
+  parties_are_serving
+  facts
+  user_bbo
+  courts[0].division
+  plaintiffs
+  defendants
+  str(docket_numbers)
+  str(users[0])
+  signature_date
+  military_affidavit_preview_question # Pre-canned preview screen
+  basic_questions_signature_flow
+  users[0].signature
+  military_affidavit = True
+---
+comment: |
+  This question is used to introduce your interview. Please customize
+id: Military Affidavit
+continue button field: military_affidavit_intro
+question: |
+  Military Affidavit
+subquestion: |
+  Use this online form to complete a military affidavit to comply with the Servicemembers Civil Relief Act.
+---
+id: Placeholder preview screen
+continue button field: military_affidavit_preview_question
+question: |
+  Placeholder preview screen
+subquestion: |
+  Here is a preview of the form you'll sign on the next page. 
+  
+   ${military_affidavit_attachment['preview']}
+---
+id: Screen one
+question: |
+  Screen one
+subquestion: |
+  Placeholder text
+fields:
+  - 'Court department': court_department
+---
+id: Information about Military Service
+question: |
+  Information about Military Service
+subquestion: |
+  Tell us what you know about each party and whether they are currently serving in the United States Military or state militia.
+fields:
+  - 'At least one of the parties is currently serving in the military': parties_are_serving
+    datatype: yesno
+  - 'Names of parties currently serving in the military': serving_parties
+    input type: area
+  - 'At least one of the parties is not currently serving in the military': parties_not_serving
+    datatype: yesno
+  - 'Names of parties who are not currently serving in the military': not_serving_parties
+    input type: area
+  - 'Names of parties who you are not sure whether or not they are currently serving in the military': unsure_serving_parties
+    input type: area
+---
+id: What facts are you using to support this affidavit?
+question: |
+  What facts are you using to support this affidavit?
+subquestion: |
+  Placeholder text
+fields:
+  - 'Facts': facts
+    input type: area
+---
+id: BBO number
+question: |
+  BBO number
+subquestion: |
+  If you are an attorney with a BBO number, please fill it in below.
+fields:
+  - 'User bbo': user_bbo
+---
+progress: 100
+mandatory: True
+id: Placeholder download screen
+question: |
+  Placeholder download screen
+subquestion: |
+  Placeholder
+  
+  ### Next steps
+  
+  1. Step 1
+  1. Step 2
+  
+  Below is a preview of your form.
+  
+  ${military_affidavit_attachment['final'] }
+need: military_affidavit
+attachment code: military_affidavit_attachment['final']
+---
+objects:
+  - military_affidavit_attachment: DADict
+---
+attachment:
+    variable name: military_affidavit_attachment[i]
+    name: Military Affidavit
+    filename: Military_Affidavit
+    skip undefined: True
+    pdf template file: military_affidavit.pdf
+    fields: 
+      - "court_division": ${ courts[0].division }
+      - "plaintiff": ${ plaintiffs }
+      - "defendant": ${ defendants }
+      - "docket_numbers": ${ str(docket_numbers) }
+      - "user_name_full": ${ str(users[0]) }
+      # If it is a signature, test which file version we're expecting. leave it empty unless it's the final attachment version
+      - "user_signature": ${ users[0].signature if i == 'final' else '' }
+      - "signature_date": ${ signature_date }
+      - "user_name_full__2": ${ str(users[0]) }
+      - "court_department": ${ court_department }
+      - "parties_are_serving": ${ parties_are_serving }
+      - "serving_parties": ${ serving_parties }
+      - "parties_not_serving": ${ parties_not_serving }
+      - "not_serving_parties": ${ not_serving_parties }
+      - "unsure_serving_parties": ${ unsure_serving_parties }
+      - "facts": ${ facts }
+      - "user_bbo": ${ user_bbo }
+---
+id: military_affidavit review screen
+event: review_military_affidavit
+question: |
+  Placeholder Review Screen
+subquestion: |
+  Edit your answers below
+review: 
+  - Edit: court_department
+    button: |
+      Court department:
+      ${ court_department }
+  - Edit: parties_are_serving
+    button: |
+      At least one of the parties is currently serving in the military:
+      ${ word(yesno(parties_are_serving)) }
+  - Edit: serving_parties
+    button: |
+      Names of parties currently serving in the military:
+      > ${ single_paragraph(serving_parties) }
+  - Edit: parties_not_serving
+    button: |
+      At least one of the parties is not currently serving in the military:
+      ${ word(yesno(parties_not_serving)) }
+  - Edit: not_serving_parties
+    button: |
+      Names of parties who are not currently serving in the military:
+      > ${ single_paragraph(not_serving_parties) }
+  - Edit: unsure_serving_parties
+    button: |
+      Names of parties who you are not sure whether or not they are currently serving in the military:
+      > ${ single_paragraph(unsure_serving_parties) }
+  - Edit: facts
+    button: |
+      Facts:
+      > ${ single_paragraph(facts) }
+  - Edit: user_bbo
+    button: |
+      User bbo:
+      ${ user_bbo }
+  - Edit: courts[0].division
+    button: |
+      courts[0].division:
+      ${ courts[0].division }
+  - Edit: plaintiffs
+    button: |
+      plaintiffs:
+      ${ plaintiffs }
+  - Edit: defendants
+    button: |
+      defendants:
+      ${ defendants }
+  - Edit: docket_numbers
+    button: |
+      docket_numbers:
+      ${ docket_numbers }
+  - Edit: users[0]
+    button: |
+      users[0]:
+      ${ users[0] }
+  - Edit: users[0].signature
+    button: |
+      users[0].signature:
+      ${ users[0].signature }
+  - Edit: signature_date
+    button: |
+      signature_date:
+      ${ signature_date }
