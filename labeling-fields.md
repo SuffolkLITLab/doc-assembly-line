@@ -79,7 +79,7 @@ PDF label | Docx label | Use case
 `petitioner` | `petitioners`, `petitioners[0]`, `petitioners[n]` | Petitioner in the case if we don't know if the petitioner is the user or other party.
 `respondent` | `respondents`, `respondents[0]`, `respondents[n]` | Plaintiff in the case if we don't know if the plaintiff is the user or other party.
 
-If the form has room for two people on one side of the case, you can reference `user__1` and `user__1` (on a PDF) or `users[0]` and `users[1]` (in a Docx). It's
+If the form has room for two people on one side of the case, you can reference `user1` and `user2` (on a PDF) or `users[0]` and `users[1]` (in a Docx). It's
 important to always use one of these 4 labels for people who are actually part of the case, since we use those internally in many many places in our standard
 questions and to communicate information to the court.
 
