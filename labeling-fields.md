@@ -147,8 +147,10 @@ Label to use in the PDF | When to use it
 `plaintiff_gender_male` | Label for a checkbox for a "male" gender choice
 `plaintiff_birthdate` | Label for a single field for the plaintiff's date of birth
 <strong>CONTACT INFORMATION</strong> | 
-`plaintiff_address_street` | Label for a field that asks for the plaintiff's house address
-`plaintiff_address_street2` | Label for a field that asks for the plaintiff's apartment number
+`plaintiff_address_address` | Label for a field that asks for the plaintiff's house address
+`plaintiff_address_unit` | Label for a field that asks for the plaintiff's apartment number
+(deprecated) `plaintiff_address_street` | Label for a field that asks for the plaintiff's house address. Use `plaintiff_address_address` instead
+(deprecated) `plaintiff_address_street2` | Label for a field that asks for the plaintiff's apartment number. Use `plaintiff_address_unit` instead
 `plaintiff_address_city` | Label for a field that asks for the plaintiff's city address
 `plaintiff_address_state` | Label for a field that asks for the plaintiff's state
 `plaintiff_address_zip` | Label for a field that asks for the plaintiff's zipcode
